@@ -1,2 +1,10 @@
-# IIT-ITM513
-Open Source Programming at Illinois Tech – Spring 2024
+# IIT ITM513
+
+**Open Source Programming** at
+*Illinois Institute of Technology* in
+Spring 2024.
+
+- [Syllabus](https://github.com/hendraanggrian/IIT-ITM513/blob/assets/syllabus.pdf)
+- [Content](https://github.com/hendraanggrian/IIT-ITM513/tree/assets/)
+- [Assignments](assignments/)
+- [Schedule](.ical/)
