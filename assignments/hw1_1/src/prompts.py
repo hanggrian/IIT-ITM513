@@ -1,15 +1,16 @@
-'''
+"""
 Assignment #1
-Command-line application of polygon area calculator and diesel engine trouble-shooter.
+Command-line application of polygon area calculator and diesel engine troubleshooter.
 
 Author: Hendra Wijaya (A20529195)
-'''
+"""
+
 
 def prompt_text(message: str, allowed_texts: list[str]) -> str:
     """Recursively ask user for allowed text.
 
-    :param message: prompt dialogue
-    :param allowed_texts: set of acceptable text
+    :param message: prompt dialogue.
+    :param allowed_texts: set of acceptable text.
     :return: lowercase text.
     """
     result = input(message)
@@ -24,9 +25,9 @@ def prompt_text(message: str, allowed_texts: list[str]) -> str:
 def prompt_digit(message: str, range_from: int, range_to: int) -> int:
     """Recursively ask user for in-bounds digit.
 
-    :param message: prompt dialogue
-    :param range_from: lower bounds
-    :param range_to: upper bounds
+    :param message: prompt dialogue.
+    :param range_from: lower bounds.
+    :param range_to: upper bounds.
     """
     result = input(message)
     if not result:
@@ -43,9 +44,9 @@ def prompt_digit(message: str, range_from: int, range_to: int) -> int:
 def prompt_decimal(message: str, range_from: float, range_to: float) -> float:
     """Recursively ask user for in-bounds decimal.
 
-    :param message: prompt dialogue
-    :param range_from: lower bounds
-    :param range_to: upper bounds
+    :param message: prompt dialogue.
+    :param range_from: lower bounds.
+    :param range_to: upper bounds.
     """
     result = input(message)
     if not result:
