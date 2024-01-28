@@ -13,7 +13,7 @@ def prompt_text(message: str, allowed_texts: list[str]) -> str:
     :param allowed_texts: set of acceptable text.
     :return: lowercase text.
     """
-    result = input(message)
+    result = input(message).strip()
     if not result:
         return prompt_text('Cannot be empty, try again... ', allowed_texts)
     result = result.lower()
@@ -29,7 +29,7 @@ def prompt_digit(message: str, range_from: int, range_to: int) -> int:
     :param range_from: lower bounds.
     :param range_to: upper bounds.
     """
-    result = input(message)
+    result = input(message).strip()
     if not result:
         return prompt_digit('Cannot be empty, try again... ', range_from, range_to)
     try:

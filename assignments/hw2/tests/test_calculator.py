@@ -13,7 +13,7 @@ from src.calculator import dollarize
 from src.calculator import get_retail
 
 
-class TestTrigonometric(unittest.TestCase):
+class TestCalculator(unittest.TestCase):
     def test_r2d(self):
         self.assertEqual(0, r2d(0))
         self.assertEqual(57, int(r2d(1)))

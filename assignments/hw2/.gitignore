@@ -7,5 +7,6 @@
 out/
 
 # Python
-__pycache__
+.venv/
+__pycache__/
 .ipynb_checkpoints/
