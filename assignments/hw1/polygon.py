@@ -8,13 +8,13 @@ Author: Hendra Wijaya (A20529195)
 import math
 
 
-def get_polygon_area(n: int, s: float) -> float:
+def get_polygon_area(sides: int, length: float) -> float:
     """Returns the calculated polygon area.
 
-    :param n: number of sides.
-    :param s: the side length.
+    :param sides: number of sides.
+    :param length: the side length.
     :raises: Exception: when polygon side is below 3 or length is empty.
     """
-    if n < 3 or s == 0:
+    if sides < 3 or length == 0:
         raise ValueError('Invalid input.')
-    return (n * s ** 2) / (4 * math.tan(math.pi / n))
+    return (sides * length ** 2) / (4 * math.tan(math.pi / sides))

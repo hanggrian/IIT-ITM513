@@ -7,12 +7,14 @@ Author: Hendra Wijaya (A20529195)
 
 import math
 import unittest
-from src.calculator import r2d
-from src.calculator import d2r
-from src.calculator import dollarize
-from src.calculator import get_retail
+
+from calculator import d2r
+from calculator import dollarize
+from calculator import get_retail
+from calculator import r2d
 
 
+# pylint: disable=missing-class-docstring, missing-function-docstring
 class TestCalculator(unittest.TestCase):
     def test_r2d(self):
         self.assertEqual(0, r2d(0))

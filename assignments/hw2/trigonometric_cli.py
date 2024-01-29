@@ -5,12 +5,12 @@ Utilize functions declared in a separate file to calculate degrees, radius, and 
 Author: Hendra Wijaya (A20529195)
 """
 
-from calculator import r2d
 from calculator import d2r
-from prompts import UNDERLINE
+from calculator import r2d
 from prompts import END
 from prompts import prompt_decimal
 from prompts import prompt_text
+from prompts import UNDERLINE
 
 print()
 

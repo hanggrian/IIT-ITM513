@@ -7,8 +7,9 @@ Author: Hendra Wijaya (A20529195)
 """
 
 import sys
-from calculator import get_sales_tax
+
 from calculator import dollarize
+from calculator import get_sales_tax
 
 UNDERLINE = '\033[4m'
 BOLD = '\033[1m'

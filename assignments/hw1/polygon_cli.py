@@ -6,8 +6,8 @@ Author: Hendra Wijaya (A20529195)
 """
 
 from polygon import get_polygon_area
-from prompts import prompt_digit
 from prompts import prompt_decimal
+from prompts import prompt_digit
 
 print()
 

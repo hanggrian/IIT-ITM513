@@ -1,0 +1,8 @@
+Department Name       , Total number of employees
+Marketing             , 50
+Information Technology, 275
+Management            , 230
+Human Resources       , 250
+Finance               , 92
+Supply Chain          , 73
+Manufacturing         , 30

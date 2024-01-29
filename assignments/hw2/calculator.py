@@ -8,20 +8,20 @@ Author: Hendra Wijaya (A20529195)
 import math
 
 
-def r2d(x: float) -> float:
+def r2d(angle: float) -> float:
     """Returns the angle of degrees from radians.
 
-    :param x: the radians' angle.
+    :param angle: the radians' angle.
     """
-    return x * 180 / math.pi
+    return angle * 180 / math.pi
 
 
-def d2r(x: float) -> float:
+def d2r(angle: float) -> float:
     """Returns the angle of radians from degrees.
 
-    :param x: the degrees' angle.
+    :param angle: the degrees' angle.
     """
-    return x * math.pi / 180
+    return angle * math.pi / 180
 
 
 def get_retail(wholesale: float, markup: float = 2.5) -> float:
@@ -35,6 +35,6 @@ def get_retail(wholesale: float, markup: float = 2.5) -> float:
     return wholesale * markup
 
 
-def dollarize(x: float) -> str:
+def dollarize(value: float) -> str:
     """Returns the currency string given a number."""
-    return '$' + format(x, ',.2f')
+    return '$' + format(value, ',.2f')

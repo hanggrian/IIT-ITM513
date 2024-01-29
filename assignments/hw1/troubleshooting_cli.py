@@ -6,6 +6,7 @@ Author: Hendra Wijaya (A20529195)
 """
 
 import sys
+
 from prompts import prompt_digit
 from prompts import prompt_text
 
