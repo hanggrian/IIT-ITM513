@@ -11,9 +11,9 @@ def get_sales_tax(subtotal: float) -> float:
     return subtotal * 0.07
 
 
-def dollarize(amount: float) -> str:
+def dollarize(value: float) -> str:
     """Returns the currency string given a number."""
-    return '$' + format(amount, ',.2f')
+    return f'${value:,.2f}'
 
 
 # pylint: disable=invalid-name, consider-using-enumerate

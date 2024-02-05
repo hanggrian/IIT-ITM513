@@ -8,9 +8,9 @@ Author: Hendra Wijaya (A20529195)
 from calculator import d2r
 from calculator import r2d
 from prompts import END
+from prompts import UNDERLINE
 from prompts import prompt_decimal
 from prompts import prompt_text
-from prompts import UNDERLINE
 
 print()
 

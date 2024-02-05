@@ -37,4 +37,4 @@ def get_retail(wholesale: float, markup: float = 2.5) -> float:
 
 def dollarize(value: float) -> str:
     """Returns the currency string given a number."""
-    return '$' + format(value, ',.2f')
+    return f'${value:,.2f}'

@@ -10,9 +10,9 @@ import sys
 from calculator import dollarize
 from calculator import get_retail
 from prompts import END
+from prompts import UNDERLINE
 from prompts import prompt_decimal
 from prompts import prompt_text
-from prompts import UNDERLINE
 
 
 def main(is_restarting=False):

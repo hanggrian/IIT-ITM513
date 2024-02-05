@@ -6,7 +6,7 @@ Author: Hendra Wijaya (A20529195)
 """
 
 import math
-import unittest
+from unittest import TestCase
 
 from calculator import d2r
 from calculator import dollarize
@@ -15,7 +15,7 @@ from calculator import r2d
 
 
 # pylint: disable=missing-class-docstring, missing-function-docstring
-class TestCalculator(unittest.TestCase):
+class TestCalculator(TestCase):
     def test_r2d(self):
         self.assertEqual(0, r2d(0))
         self.assertEqual(57, int(r2d(1)))

@@ -5,7 +5,7 @@ List/array operations to calculate grand total with a sales tax and 2-D matrix m
 Author: Hendra Wijaya (A20529195)
 """
 
-import unittest
+from unittest import TestCase
 
 from calculator import dollarize
 from calculator import get_sales_tax
@@ -13,7 +13,7 @@ from calculator import multiplyMatrix
 
 
 # pylint: disable=missing-class-docstring, missing-function-docstring, invalid-name
-class TestCalculator(unittest.TestCase):
+class TestCalculator(TestCase):
     def test_get_sales_tax(self):
         self.assertEqual(0, get_sales_tax(0))
         self.assertEqual(7, int(get_sales_tax(100)))
