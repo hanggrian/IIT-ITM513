@@ -14,7 +14,7 @@ from reader import read_file
 profits = read_file(
     'last_ten_year_net_profit',
     ';',
-    convert_key=lambda value: int(value),
+    convert_key=lambda key: int(key),
     convert_value=lambda value: Price.fromstring(value).amount,
 )
 
@@ -22,6 +22,6 @@ pyplot.suptitle("Company's Profit Over the Past Ten Years", fontweight='bold')
 pyplot.title('Bar Graph')
 pyplot.xlabel('Years')
 pyplot.ylabel('Net Profit in the 100 millions')
-pyplot.bar(profits.keys(), profits.values())
+pyplot.bar(list(profits.keys()), list(profits.values()))
 pyplot.xticks(list(range(min(profits.keys()), max(profits.keys()) + 1)))
 pyplot.show()

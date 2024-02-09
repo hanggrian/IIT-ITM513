@@ -7,8 +7,8 @@ Author: Hendra Wijaya (A20529195)
 
 import sys
 
-UNDERLINE = '\033[4m'
-END = '\033[0m'
+UNDERLINE: str = '\033[4m'
+END: str = '\033[0m'
 
 
 def prompt_text(message: str, allowed_texts: list[str] | None = None) -> str:
@@ -18,10 +18,10 @@ def prompt_text(message: str, allowed_texts: list[str] | None = None) -> str:
     :param allowed_texts: set of acceptable text, may be undefined.
     :return: lowercase text.
     """
-    result = input(message).strip()
+    result: str = input(message).strip()
     if not result:
         return prompt_text('Cannot be empty, try again... ', allowed_texts)
-    result = result.lower()
+    result: str = result.lower()
     if allowed_texts is None or result in allowed_texts:
         return result
     return prompt_text('Unknown input, try again... ', allowed_texts)
@@ -39,11 +39,11 @@ def prompt_decimal(
     :param range_from: lower bounds, may be undefined.
     :param range_to: upper bounds, may be undefined.
     """
-    result = input(message).strip()
+    result: str = input(message).strip()
     if not result:
         return prompt_decimal('Cannot be empty, try again... ', range_from, range_to)
     try:
-        result = float(result)
+        result: float = float(result)
         if range_from <= result <= range_to:
             return result
         return prompt_decimal('Unknown input, try again... ', range_from, range_to)

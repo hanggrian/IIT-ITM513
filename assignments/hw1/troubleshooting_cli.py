@@ -7,8 +7,7 @@ Author: Hendra Wijaya (A20529195)
 
 import sys
 
-from prompts import prompt_digit
-from prompts import prompt_text
+from prompts import prompt_digit, prompt_text
 
 # input restrictions
 COLOR_INPUTS = ['g', 'green', 'a', 'amber', 'r', 'red', 'q', 'quit']

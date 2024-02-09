@@ -7,9 +7,7 @@ Author: Hendra Wijaya (A20529195)
 
 from unittest import TestCase
 
-from calculator import dollarize
-from calculator import get_sales_tax
-from calculator import multiplyMatrix
+from calculator import dollarize, get_sales_tax, multiplyMatrix
 
 
 # pylint: disable=missing-class-docstring, missing-function-docstring, invalid-name

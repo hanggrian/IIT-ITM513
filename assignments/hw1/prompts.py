@@ -13,10 +13,10 @@ def prompt_text(message: str, allowed_texts: list[str]) -> str:
     :param allowed_texts: set of acceptable text.
     :return: lowercase text.
     """
-    result = input(message).strip()
+    result: str = input(message).strip()
     if not result:
         return prompt_text('Cannot be empty, try again... ', allowed_texts)
-    result = result.lower()
+    result: str = result.lower()
     if result not in allowed_texts:
         return prompt_text('Unknown input, try again... ', allowed_texts)
     return result
@@ -29,11 +29,11 @@ def prompt_digit(message: str, range_from: int, range_to: int) -> int:
     :param range_from: lower bounds.
     :param range_to: upper bounds.
     """
-    result = input(message).strip()
+    result: str = input(message).strip()
     if not result:
         return prompt_digit('Cannot be empty, try again... ', range_from, range_to)
     try:
-        result = int(result)
+        result: int = int(result)
         if range_from <= result <= range_to:
             return result
         return prompt_digit('Unknown input, try again... ', range_from, range_to)
@@ -48,11 +48,11 @@ def prompt_decimal(message: str, range_from: float, range_to: float) -> float:
     :param range_from: lower bounds.
     :param range_to: upper bounds.
     """
-    result = input(message)
+    result: str = input(message)
     if not result:
         return prompt_decimal('Cannot be empty, try again... ', range_from, range_to)
     try:
-        result = float(result)
+        result: float = float(result)
         if range_from <= result <= range_to:
             return result
         return prompt_decimal('Unknown input, try again... ', range_from, range_to)

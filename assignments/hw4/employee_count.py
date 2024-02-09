@@ -19,8 +19,8 @@ employees = read_file(
 total = sum(employees.values())  # to determine wedge value
 pyplot.title('Employees per Department', fontweight='bold')
 _, _, autotexts = pyplot.pie(
-    employees.values(),
-    labels=employees.keys(),
+    list(employees.values()),
+    labels=list(employees.keys()),
     autopct=lambda pct: f'{pct:.1f}% ({int(round(pct * total / 100))})',
 )
 for autotext in autotexts:

@@ -9,7 +9,7 @@ Author: Hendra Wijaya (A20529195)
 from calculator import multiplyMatrix
 
 
-def prompt_matrix(message: str) -> list:
+def prompt_matrix(message):
     """Recursively ask user for a 3x3 matrix.
 
     :param message: a space-separated decimals.
@@ -22,15 +22,17 @@ def prompt_matrix(message: str) -> list:
     if len(split) != 9:
         return prompt_matrix('Incorrect size, try again... ')
     try:
-        return [[float(split[0]), float(split[1]), float(split[2])],
-                [float(split[3]), float(split[4]), float(split[5])],
-                [float(split[6]), float(split[7]), float(split[8])]]
+        return [
+            [float(split[0]), float(split[1]), float(split[2])],
+            [float(split[3]), float(split[4]), float(split[5])],
+            [float(split[6]), float(split[7]), float(split[8])],
+        ]
     except ValueError:
         return prompt_matrix('Parsing error, try again... ')
 
 
-def get_longest_element_length(matrix: list) -> int:
-    """Determines the longest length of an element in this list."""
+def get_longest_element_length(matrix):
+    """Returns the longest length of an element in this list."""
     length = 0
     for line in matrix:
         for e in line:
@@ -38,7 +40,7 @@ def get_longest_element_length(matrix: list) -> int:
     return length
 
 
-def stringify_element(num: float, length: int):
+def stringify_element(num, length):
     """Add extra whitespace padding for pretty printing."""
     s = f'{num:g}'
     spaces = ''

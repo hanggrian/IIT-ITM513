@@ -8,10 +8,7 @@ Author: Hendra Wijaya (A20529195)
 import math
 from unittest import TestCase
 
-from calculator import d2r
-from calculator import dollarize
-from calculator import get_retail
-from calculator import r2d
+from calculator import d2r, dollarize, get_retail, r2d
 
 
 # pylint: disable=missing-class-docstring, missing-function-docstring
