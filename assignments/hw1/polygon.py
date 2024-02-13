@@ -5,7 +5,7 @@ Command-line application of polygon area calculator and diesel engine troublesho
 Author: Hendra Wijaya (A20529195)
 """
 
-import math
+from math import tan, pi
 
 
 def get_polygon_area(sides: int, length: float) -> float:
@@ -17,4 +17,4 @@ def get_polygon_area(sides: int, length: float) -> float:
     """
     if sides < 3 or length == 0:
         raise ValueError('Invalid input.')
-    return (sides * length ** 2) / (4 * math.tan(math.pi / sides))
+    return (sides * length ** 2) / (4 * tan(pi / sides))

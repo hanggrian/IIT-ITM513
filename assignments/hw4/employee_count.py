@@ -23,6 +23,6 @@ _, _, autotexts = pyplot.pie(
     labels=list(employees.keys()),
     autopct=lambda pct: f'{pct:.1f}% ({int(round(pct * total / 100))})',
 )
-for autotext in autotexts:
-    autotext.set_size(8)  # to keep label inside wedge
+for a in autotexts:
+    a.set_size(8)  # to keep label inside wedge
 pyplot.show()

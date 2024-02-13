@@ -15,17 +15,17 @@ def prompt_matrix(message):
     :param message: a space-separated decimals.
     :return: 2-D list.
     """
-    s = input(message).strip()
-    if not s:
+    result = input(message).strip()
+    if not result:
         return prompt_matrix('Cannot be empty, try again... ')
-    split = s.split(' ')
-    if len(split) != 9:
+    result = result.split(' ')
+    if len(result) != 9:
         return prompt_matrix('Incorrect size, try again... ')
     try:
         return [
-            [float(split[0]), float(split[1]), float(split[2])],
-            [float(split[3]), float(split[4]), float(split[5])],
-            [float(split[6]), float(split[7]), float(split[8])],
+            [float(result[0]), float(result[1]), float(result[2])],
+            [float(result[3]), float(result[4]), float(result[5])],
+            [float(result[6]), float(result[7]), float(result[8])],
         ]
     except ValueError:
         return prompt_matrix('Parsing error, try again... ')

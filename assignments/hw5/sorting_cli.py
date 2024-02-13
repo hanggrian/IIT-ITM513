@@ -44,11 +44,11 @@ match (
     )
 ):
     case 'y' | 'yes':
-        bubble_sort_stats = None  # pylint: disable=invalid-name
+        bubble_sort_stats: None = None
         shell_sort_stats = get_sorting_stats(shell_sort)
         quicksort_stats = get_sorting_stats(quicksort)
     case 'n' | 'no':
-        bubble_sort_stats = get_sorting_stats(bubble_sort)
+        bubble_sort_stats: dict[int, float] = get_sorting_stats(bubble_sort)
         shell_sort_stats = get_sorting_stats(shell_sort)
         quicksort_stats = get_sorting_stats(quicksort)
     case _:

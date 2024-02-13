@@ -16,8 +16,7 @@ def dollarize(value: float) -> str:
     return f'${value:,.2f}'
 
 
-# pylint: disable=invalid-name, consider-using-enumerate
-def multiplyMatrix(a: list, b: list) -> list:
+def multiplyMatrix(a: list, b: list) -> list:  # pylint: disable=invalid-name
     """Returns the multiplication of 2-D matrices.
 
     :param a: the first matrix.
@@ -25,9 +24,10 @@ def multiplyMatrix(a: list, b: list) -> list:
     """
     if len(a[0]) != len(b):
         raise ValueError('Incompatible sizes.')
-    c: list[list[int]] = [[0] * len(b[0]) for _ in range(len(a))]
+    result: list[list[int]] = [[0] * len(b[0]) for _ in range(len(a))]
+    # pylint: disable=consider-using-enumerate
     for i in range(len(a)):
         for j in range(len(b[0])):
             for k in range(len(b)):
-                c[i][j] += a[i][k] * b[k][j]
-    return c
+                result[i][j] += a[i][k] * b[k][j]
+    return result

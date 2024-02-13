@@ -27,10 +27,9 @@ def timed_sorting(length: int, action: Callable[[list[int]], None]) -> float:
     :return: elapsed time.
     """
     print(f'Timing {action.__name__} of {length} items...')
-    initial_time = time()
+    initial_time: float = time()
     action(generate_random_list(length))
-    surpassed_time = time() - initial_time
-    return surpassed_time
+    return time() - initial_time
 
 
 def bubble_sort(collection: list[int]) -> None:

@@ -5,7 +5,7 @@ Utilize functions declared in a separate file to calculate degrees, radius, and 
 Author: Hendra Wijaya (A20529195)
 """
 
-import sys
+from sys import float_info
 
 UNDERLINE: str = '\033[4m'
 END: str = '\033[0m'
@@ -21,7 +21,7 @@ def prompt_text(message: str, allowed_texts: list[str] | None = None) -> str:
     result: str = input(message).strip()
     if not result:
         return prompt_text('Cannot be empty, try again... ', allowed_texts)
-    result: str = result.lower()
+    result = result.lower()
     if allowed_texts is None or result in allowed_texts:
         return result
     return prompt_text('Unknown input, try again... ', allowed_texts)
@@ -29,8 +29,8 @@ def prompt_text(message: str, allowed_texts: list[str] | None = None) -> str:
 
 def prompt_decimal(
     message: str,
-    range_from: float = -sys.float_info.min,
-    range_to: float = sys.float_info.max,
+    range_from: float = -float_info.min,
+    range_to: float = float_info.max,
 ) -> float:
     """Recursively ask user for a decimal value, or in-bounds value when optional parameters are
     defined.

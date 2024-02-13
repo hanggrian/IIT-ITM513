@@ -10,7 +10,7 @@ from unittest import TestCase
 from calculator import dollarize, get_sales_tax, multiplyMatrix
 
 
-# pylint: disable=missing-class-docstring, missing-function-docstring, invalid-name
+# pylint: disable=missing-class-docstring, missing-function-docstring
 class TestCalculator(TestCase):
     def test_get_sales_tax(self):
         self.assertEqual(0, get_sales_tax(0))
@@ -26,7 +26,7 @@ class TestCalculator(TestCase):
         # invalid parameter
         self.assertRaises(Exception, dollarize, 'foo')
 
-    def test_multiplyMatrix(self):
+    def test_multiplyMatrix(self):  # pylint: disable=invalid-name
         # sample data obtained from https://www.mathsisfun.com/algebra/matrix-multiplying.html
         # 2x2 multiply by 2x2
         matrix = multiplyMatrix([[4, 0], [1, -9]], [[8, 0], [2, -18]])

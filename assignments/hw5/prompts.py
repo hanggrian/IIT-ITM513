@@ -16,7 +16,7 @@ def prompt_text(message: str, allowed_texts: list[str]) -> str:
     result: str = input(message).strip()
     if not result:
         return prompt_text('Cannot be empty, try again... ', allowed_texts)
-    result: str = result.lower()
+    result = result.lower()
     if result not in allowed_texts:
         return prompt_text('Unknown input, try again... ', allowed_texts)
     return result

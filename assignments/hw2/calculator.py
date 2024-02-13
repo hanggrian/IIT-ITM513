@@ -5,7 +5,7 @@ Utilize functions declared in a separate file to calculate degrees, radius, and 
 Author: Hendra Wijaya (A20529195)
 """
 
-import math
+from math import pi
 
 
 def r2d(angle: float) -> float:
@@ -13,7 +13,7 @@ def r2d(angle: float) -> float:
 
     :param angle: the radians' angle.
     """
-    return angle * 180 / math.pi
+    return angle * 180 / pi
 
 
 def d2r(angle: float) -> float:
@@ -21,7 +21,7 @@ def d2r(angle: float) -> float:
 
     :param angle: the degrees' angle.
     """
-    return angle * math.pi / 180
+    return angle * pi / 180
 
 
 def get_retail(wholesale: float, markup: float = 2.5) -> float:
