@@ -1,0 +1,19 @@
+dn: uid=hsampson, dc=example, dc=com
+cn: Heidi Sampson
+sn: Sampson
+telephoneNumber: 116-292-7450
+
+dn: uid=randerson, dc=example, dc=com
+cn: Roy Anderson
+sn: Anderson
+telephoneNumber: 655-887-8516
+
+dn: uid=jbrown, dc=example, dc=com
+cn: John Brown
+sn: Brown
+telephoneNumber: 180-452-5801
+
+dn: uid=kcollins, dc=example, dc=com
+cn: Kara Collins
+sn: Collins
+telephoneNumber: 053-264-2244

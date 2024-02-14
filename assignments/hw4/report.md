@@ -60,7 +60,7 @@ I would like to express my observation of Anaconda distribution. Although I do
 enjoy the benefit of simple package management that is integrated directly into
 the Terminal, I have to say I disagree with their approach of including almost
 everything in the installation. This includes a code editor (*VSCode*),
-full-blown IDEs (*DataSpell* & *Spyder*), and GUI development kit
+full-blown IDEs (*DataSpell* & *Spyder*), and GUI development tool
 (*Qt Console*), resulting in a whooping file size of **8GB**. In comparison,
 below are the file sizes of several popular SDKs and package managers.
 
