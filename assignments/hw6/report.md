@@ -51,7 +51,7 @@ knowledge base to master a concept like LDAP before I start writing my solution.
 
 Besides LDAP, of which I had no prior knowledge or experience, I learned
 multiple string commands by attaching a prefix character such as format
-`f'...'`, raw `r'...'`, Unicode `u'...'`, and byte `b'...'`.
+`f'...'`, raw `r'...'`, Unicode `u'...'` and byte `b'...'`.
 
 ## Question 8
 

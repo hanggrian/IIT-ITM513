@@ -1,6 +1,6 @@
 """
 Assignment #2
-Utilize functions declared in a separate file to calculate degrees, radius, and retail cost.
+Utilize functions declared in a separate file to calculate degrees, radius and retail cost.
 
 Author: Hendra Wijaya (A20529195)
 """

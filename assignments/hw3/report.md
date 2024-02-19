@@ -43,7 +43,7 @@ I am confident that my solution is correct.
 
 > Did you test your program thoroughly?
 
-I tested my solution with standard sample data, edge cases, and incorrect input.
+I tested my solution with standard sample data, edge cases and incorrect input.
 
 ## Question 4
 

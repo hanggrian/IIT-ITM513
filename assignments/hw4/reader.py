@@ -14,7 +14,7 @@ def read_file(
     delimiter: str,
     convert_key: Callable[[str], Any] = lambda key: key,
     convert_value: Callable[[str], Any] = lambda value: value,
-) -> dict:
+) -> dict[Any, Any]:
     """Build map from text file, or quit if file is not found.
 
     :param file_name: text file name without extension.
@@ -24,7 +24,7 @@ def read_file(
     :return: a map of customized types.
     """
     try:
-        result: dict = {}
+        result: dict[Any, Any] = {}
         with open(f'{file_name}.txt', 'r', encoding='UTF-8') as file:
             for line in file.read().splitlines()[1:]:
                 split: list[str] = line.split(delimiter)

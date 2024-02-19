@@ -24,7 +24,7 @@ Yes, I tested my program using the given text files.
 > How much time did you spend completing your assignment?
 
 I spent roughly 4 hours studying [matplotlib](https://matplotlib.org/),
-[price-parser](https://github.com/scrapinghub/price-parser), and [typing](https://docs.python.org/3/library/typing.html)
+[price-parser](https://github.com/scrapinghub/price-parser) and [typing](https://docs.python.org/3/library/typing.html)
 to complete the assignment.
 
 ## Question 5

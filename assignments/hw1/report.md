@@ -26,7 +26,7 @@ Yes, the unit test files are included in the tests directory.
 > How much time did you spend completing your assignment?
 
 Being new to Python programming, I spent an entire day learning about control
-flows, code conventions, and other official documentation before completing the
+flows, code conventions and other official documentation before completing the
 assignment at the end of the day.
 
 ## Question 5
