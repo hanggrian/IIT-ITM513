@@ -50,8 +50,16 @@ phones_text = f'# Generated at {formatted_time}\n'
 for _ in range(ENTRIES_PHONES):
     phones_text += f'{phones_faker.phone_number()}\n'
 
+print()
+print(f'Writing {INPUT_LDAP}...')
+
 with open(INPUT_LDAP, 'w', encoding='UTF-8') as f:
     f.write(ldap_text)
 
+print(f'Writing {INPUT_PHONES}...')
+
 with open(INPUT_PHONES, 'w', encoding='UTF-8') as f:
     f.write(phones_text)
+
+print('Goodbye!')
+print()

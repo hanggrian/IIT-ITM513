@@ -11,8 +11,8 @@ from sorting import timed_sorting
 
 LENGTH = 10000
 
-BOLD: str = '\033[1m'
-END: str = '\033[0m'
+BOLD = '\033[1m'
+END = '\033[0m'
 
 sorter = pysort.Sorting()
 

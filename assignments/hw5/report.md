@@ -25,7 +25,7 @@ confident of their accuracy.
 > How much time did you spend completing your assignment?
 
 Producing the source code took several hours. However, I did spend an extra day
-writing the sorting essay and this report, totaling almost 2 days of work.
+writing the sorting essay and this report, totaling almost two days of work.
 
 ## Question 3
 

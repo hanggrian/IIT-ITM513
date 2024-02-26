@@ -25,8 +25,8 @@ the test was conducted thoroughly.
 
 > How much time did you spend completing your assignment?
 
-It took approximately 4 hours to write the code and another 2 hours for this
-report, resulting in almost a full day of work.
+It took approximately four hours to write the code and another two hours for
+this report, resulting in almost a full day of work.
 
 ## Question 5
 

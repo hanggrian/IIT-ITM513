@@ -12,8 +12,8 @@ from matplotlib import pyplot
 from prompts import prompt_text
 from sorting import timed_sorting, bubble_sort, shell_sort, quicksort
 
-UNDERLINE: str = '\033[4m'
-END: str = '\033[0m'
+UNDERLINE = '\033[4m'
+END = '\033[0m'
 
 
 def get_sorting_stats(action):
