@@ -12,7 +12,7 @@ print()
 print(f"Reading '{INPUT_LDAP}'...")
 print()
 print('dc=com')
-print('└ dc=example')
+print('└─ dc=example')
 
 output: str = ''
 with open('ldap_input.txt', 'r', encoding='UTF-8') as f:
@@ -26,15 +26,15 @@ with open('ldap_input.txt', 'r', encoding='UTF-8') as f:
         phone = split[3]
 
         if not is_last:
-            print(f'  ├ uid={username}')
-            print(f'  │ ├ cn={first_name} {last_name}')
-            print(f'  │ ├ sn={last_name}')
-            print(f'  │ └ telephoneNumber={phone}')
+            print(f'   ├─ uid={username}')
+            print(f'   │  ├─ cn={first_name} {last_name}')
+            print(f'   │  ├─ sn={last_name}')
+            print(f'   │  └─ telephoneNumber={phone}')
         else:
-            print(f'  └ uid={username}')
-            print(f'    ├ cn={first_name} {last_name}')
-            print(f'    ├ sn={last_name}')
-            print(f'    └ telephoneNumber={phone}')
+            print(f'   └─ uid={username}')
+            print(f'      ├─ cn={first_name} {last_name}')
+            print(f'      ├─ sn={last_name}')
+            print(f'      └─ telephoneNumber={phone}')
 
         output += f'dn: uid={username}, dc=example, dc=com\n'
         output += f'cn: {first_name} {last_name}\n'
