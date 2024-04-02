@@ -1,4 +1,4 @@
-# Program Output
+# Program output
 
 ## SellItems.py
 

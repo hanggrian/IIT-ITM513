@@ -1,4 +1,4 @@
-# Program Output
+# Program output
 
 ## trigonometric_cli.py
 

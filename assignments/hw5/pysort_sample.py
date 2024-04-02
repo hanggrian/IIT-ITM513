@@ -11,8 +11,8 @@ from sorting import timed_sorting
 
 LENGTH = 10000
 
-BOLD = '\033[1m'
 END = '\033[0m'
+BOLD = '\033[1m'
 
 sorter = pysort.Sorting()
 
@@ -41,11 +41,11 @@ slowest_time = max(stats, key=stats.get)
 
 print()
 print(
-    f'The fastest is {BOLD}{fastest_time}{END} ' +
+    f'The fastest is {BOLD}{fastest_time} {END}' +
     f'running for {BOLD}{int(stats[fastest_time])}{END} seconds.',
 )
 print(
-    f'The slowest is {BOLD}{slowest_time}{END} ' +
+    f'The slowest is {BOLD}{slowest_time} {END}' +
     f'running for {BOLD}{int(stats[slowest_time])}{END} seconds.',
 )
 print('Goodbye!')

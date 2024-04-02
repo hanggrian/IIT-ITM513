@@ -1,4 +1,4 @@
-# Program Output
+# Program output
 
 ## sorting_cli.py
 

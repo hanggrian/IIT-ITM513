@@ -10,8 +10,8 @@ from matplotlib import pyplot
 from pandas import read_csv
 from scipy.stats import mode
 
-BOLD = '\033[1m'
 END = '\033[0m'
+BOLD = '\033[1m'
 
 array = read_csv('student_grades.csv').to_numpy()
 

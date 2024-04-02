@@ -10,9 +10,10 @@ import sys
 
 from calculator import dollarize, get_sales_tax
 
-UNDERLINE = '\033[4m'
-BOLD = '\033[1m'
 END = '\033[0m'
+BOLD = '\033[1m'
+UNDERLINE = '\033[4m'
+YELLOW = '\033[33m'
 
 prices = []
 
@@ -26,7 +27,7 @@ print(
 
 def main():
     """Main recursive function."""
-    result = input(f'Enter the price of item #{len(prices) + 1}: ')
+    result = input(f'{YELLOW}Enter the price of item #{len(prices) + 1}: {END}')
     match result.lower():
         case 's' | 'stop':
             return None
@@ -56,10 +57,10 @@ for p in prices:
     print(dollarize(p), end=' ')
     subtotal += p
 print()
-print(f'{BOLD}Subtotal: {dollarize(subtotal)}')
+print(f'Subtotal: {BOLD}{dollarize(subtotal)}{END}')
 
 sales_tax = get_sales_tax(subtotal)
-print(f'Sales tax: {dollarize(sales_tax)}')
-print(f'Grand total: {dollarize(subtotal + sales_tax)}')
+print(f'Sales tax: {BOLD}{dollarize(sales_tax)}{END}')
+print(f'Grand total: {BOLD}{dollarize(subtotal + sales_tax)}{END}')
 
 print()

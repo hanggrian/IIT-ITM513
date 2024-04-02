@@ -7,8 +7,8 @@ Author: Hendra Wijaya (A20529195)
 
 from numpy import arange, reshape
 
-BOLD = '\033[1m'
 END = '\033[0m'
+BOLD = '\033[1m'
 
 
 def stringify_array(arr):

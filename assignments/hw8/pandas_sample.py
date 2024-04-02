@@ -8,10 +8,11 @@ Author: Hendra Wijaya (A20529195)
 from numpy.random import randint
 from pandas import Series, DataFrame
 
-UNDERLINE = '\033[4m'
 END = '\033[0m'
+UNDERLINE = '\033[4m'
 
-alphabets: str = 'abcdefghijklmno'
+ALPHABETS = 'abcdefghijklmno'
+
 alphabet_counter: int = 0
 
 
@@ -19,7 +20,7 @@ def print_line(question, answer):
     """Convenient method to answer line-by-line."""
     global alphabet_counter  # pylint: disable=invalid-name, global-statement
     print()
-    print(f'{UNDERLINE}{alphabets[alphabet_counter]}. {question}{END}')
+    print(f'{UNDERLINE}{ALPHABETS[alphabet_counter]}. {question}{END}')
     print(answer)
     alphabet_counter = alphabet_counter + 1
 
@@ -69,50 +70,50 @@ print_line(
     DataFrame(temperature_map),
 )
 
-temperatures = DataFrame(temperature_map, index=['Morning', 'Afternoon', 'Evening'])
+temperature_dataframe = DataFrame(temperature_map, index=['Morning', 'Afternoon', 'Evening'])
 
 print_line(
     'Recreate the DataFrame temperatures in Part (a) with custom indices using the index keyword ' +
     "argument and a list containing 'Morning', 'Afternoon' and 'Evening'.",
-    temperatures,
+    temperature_dataframe,
 )
 
 print_line(
     "Select from temperatures the column of temperature readings for 'Maxine'.",
-    temperatures['Maxine'],
+    temperature_dataframe['Maxine'],
 )
 
 print_line(
     "Select from temperatures the row of 'Morning' temperature readings.",
-    temperatures.loc['Morning'],
+    temperature_dataframe.loc['Morning'],
 )
 
 print_line(
     "Select from temperatures the rows for 'Morning' and 'Evening' temperature readings.",
-    temperatures.loc[['Morning', 'Evening']],
+    temperature_dataframe.loc[['Morning', 'Evening']],
 )
 
 print_line(
     "Select from temperatures the columns of temperature readings for 'Amanda' and 'Maxine'.",
-    temperatures[['Amanda', 'Maxine']],
+    temperature_dataframe[['Amanda', 'Maxine']],
 )
 
 print_line(
     "Select from temperatures the elements for 'Amanda' and 'Maxine' in the 'Morning' and " +
     "'Afternoon'.",
-    temperatures.loc[['Morning', 'Afternoon'], ['Amanda', 'Maxine']],
+    temperature_dataframe.loc[['Morning', 'Afternoon'], ['Amanda', 'Maxine']],
 )
 
 print_line(
     "Use the describe method to produce temperatures' descriptive statistics.",
-    temperatures.describe(),
+    temperature_dataframe.describe(),
 )
 
-print_line('Transpose temperatures.', temperatures.transpose())
+print_line('Transpose temperatures.', temperature_dataframe.transpose())
 
 print_line(
     'Sort temperatures so that its column names are in alphabetical order',
-    temperatures.sort_index(axis=1),
+    temperature_dataframe.sort_index(axis=1),
 )
 
 print()

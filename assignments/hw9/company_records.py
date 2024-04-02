@@ -12,6 +12,11 @@ from pandas import DataFrame
 
 from prompts import prompt_text
 
+END = '\033[0m'
+BOLD = '\033[1m'
+UNDERLINE = '\033[4m'
+YELLOW = '\033[33m'
+
 MAIN_OPTIONS = ['1', '2', '3', '4', '5', '6', 'q']
 DATA_FILE = 'data.pkl'
 
@@ -35,7 +40,7 @@ else:
 def main():
     """Recursive function until user enters 'Q' key or explicitly exits."""
     print()
-    print("Enter the number corresponding to what you'd like to do.")
+    print(f"{UNDERLINE}Enter the number corresponding to what you'd like to do.{END}")
     print()
     print('1. Add a new name and email address.')
     print('2. Find an existing email address from a name.')
@@ -43,40 +48,49 @@ def main():
     print('4. Delete an existing name and email address.')
     print('5. Export to CSV file.')
     print('6. Exit the program.')
-    match prompt_text('Enter a number: ', MAIN_OPTIONS):
+    match prompt_text(f'{YELLOW}Enter a number: {END}', MAIN_OPTIONS):
         case '1':
-            name = prompt_text('Enter the name you would like to add: ')
-            email = prompt_text('Enter the email you would like to add: ')
+            name = prompt_text(f'{YELLOW}Enter the name you would like to add: {END}')
+            email = prompt_text(f'{YELLOW}Enter the email you would like to add: {END}')
             data[name] = email
             if name not in data:
-                print('The name and email has been added.')
+                print(f'{BOLD}The name and email has been added.{END}')
             else:
-                print('The name and email has been overridden.')
+                print(f'{BOLD}The name and email has been overridden.{END}')
             main()
         case '2':
-            name = prompt_text('Enter the name you would like to search: ', list(data.keys()))
-            print(f'The email is: {data[name]}')
+            name = prompt_text(
+                f'{YELLOW}Enter the name you would like to search: {END}',
+                list(data.keys()),
+            )
+            print(f'{BOLD}The email is: {data[name]}{END}')
             main()
         case '3':
-            name = prompt_text('Enter the name you would like to change: ', list(data.keys()))
-            email = prompt_text('Enter the email you would like to add: ')
+            name = prompt_text(
+                f'{YELLOW}Enter the name you would like to change: {END}',
+                list(data.keys()),
+            )
+            email = prompt_text(f'{YELLOW}Enter the email you would like to add: {END}')
             data[name] = email
-            print('The email has been changed.')
+            print(f'{BOLD}The email has been changed.{END}')
             main()
         case '4':
-            name = prompt_text('Enter the name you would like to delete: ', list(data.keys()))
+            name = prompt_text(
+                f'{YELLOW}Enter the name you would like to delete: {END}',
+                list(data.keys()),
+            )
             del data[name]
-            print('The name and email has been deleted.')
+            print(f'{BOLD}The name and email has been deleted.{END}')
             main()
         case '5':
-            file_name = prompt_text('Enter the file name: ')
+            file_name = prompt_text(f'{YELLOW}Enter the file name: {END}')
             if not file_name.lower().endswith('.csv'):
                 file_name += '.csv'
             DataFrame({
                 'Person name': data.keys(),
                 'Email address': data.values(),
             }).to_csv(file_name, encoding='UTF-8', index=False)
-            print(f"Exporting '{file_name}' file.")
+            print(f"{BOLD}Exporting '{file_name}' file.{END}")
             main()
         case _:
             with open(DATA_FILE, 'wb') as binary_file:  # pylint: disable=redefined-outer-name

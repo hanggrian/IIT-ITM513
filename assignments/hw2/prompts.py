@@ -7,10 +7,6 @@ Author: Hendra Wijaya (A20529195)
 
 from sys import float_info
 
-UNDERLINE: str = '\033[4m'
-END: str = '\033[0m'
-
-
 def prompt_text(message: str, allowed_texts: list[str] | None = None) -> str:
     """Recursively ask user for a string value, or allowed text when optional parameter is defined.
 

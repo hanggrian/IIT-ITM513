@@ -1,4 +1,4 @@
-# Program Output
+# Program output
 
 ## polygon_cli.py
 

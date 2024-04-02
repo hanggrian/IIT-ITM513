@@ -8,11 +8,11 @@ Author: Hendra Wijaya (A20529195)
 from matplotlib import pyplot
 from price_parser import Price
 
-from reader import read_file
+from reader import read_txt
 
 # pylint: disable=unnecessary-lambda
-profits = read_file(
-    'last_ten_year_net_profit',
+profits = read_txt(
+    'last_ten_year_net_profit.txt',
     ';',
     convert_key=lambda key: int(key),
     convert_value=lambda value: Price.fromstring(value).amount,

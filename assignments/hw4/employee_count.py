@@ -7,11 +7,11 @@ Author: Hendra Wijaya (A20529195)
 
 from matplotlib import pyplot
 
-from reader import read_file
+from reader import read_txt
 
 # pylint: disable=unnecessary-lambda
-employees = read_file(
-    'employee_count_by_department',
+employees = read_txt(
+    'employee_count_by_department.txt',
     ',',
     convert_value=lambda value: int(value),
 )

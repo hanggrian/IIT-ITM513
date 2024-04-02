@@ -1,4 +1,4 @@
-# Learning Report
+# Learning report
 
 ## Question 1
 

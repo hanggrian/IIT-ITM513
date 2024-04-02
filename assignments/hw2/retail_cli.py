@@ -8,7 +8,12 @@ Author: Hendra Wijaya (A20529195)
 import sys
 
 from calculator import dollarize, get_retail
-from prompts import END, UNDERLINE, prompt_decimal, prompt_text
+from prompts import prompt_decimal, prompt_text
+
+END = '\033[0m'
+BOLD = '\033[1m'
+UNDERLINE = '\033[4m'
+YELLOW = '\033[33m'
 
 
 def main(is_restarting=False):
@@ -16,11 +21,11 @@ def main(is_restarting=False):
     if is_restarting:
         print('Restarting...')
     print()
-    retail = get_retail(prompt_decimal("Enter the item's wholesale cost: ", 0))
-    print('Retail price: ', dollarize(retail))
+    retail = get_retail(prompt_decimal(f"{YELLOW}Enter the item's wholesale cost: {END}", 0))
+    print(f'Retail price: {BOLD}{dollarize(retail)}{END}')
     match prompt_text(
-        f'Do you have another item ({UNDERLINE}Y{END}es/' +
-        f'{UNDERLINE}N{END}o)? ',
+        f'{YELLOW}Do you have another item ({UNDERLINE}Y{END}{YELLOW}es/' +
+        f'{UNDERLINE}N{END}{YELLOW}o)? {END}',
         ['y', 'yes', 'n', 'no', 'q', 'quit'],
     ):
         case 'y' | 'yes':
