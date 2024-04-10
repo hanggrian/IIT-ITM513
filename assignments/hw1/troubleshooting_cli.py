@@ -22,6 +22,7 @@ METER_MAX = 1000
 
 def end():
     """Quit the program."""
+    print()
     print('Goodbye!')
     print()
     sys.exit(0)
@@ -36,7 +37,7 @@ def main(is_restarting=False):
     match prompt_text(
         f'{YELLOW}Color ({UNDERLINE}G{END}{YELLOW}reen/' +
         f'{UNDERLINE}A{END}{YELLOW}mber/' +
-        f'{UNDERLINE}R{END}{YELLOW}ed): {END}',
+        f'{UNDERLINE}R{END}{YELLOW}ed):{END}',
         COLOR_INPUTS,
     ):
         case 'g' | 'green':
@@ -47,12 +48,12 @@ def main(is_restarting=False):
             main(True)
         case 'r' | 'red':
             print('Shut-off al input lines check meter #3.')
-            if prompt_digit('Meter (0-1000): ', METER_MIN, METER_MAX) < 50:
+            if prompt_digit(f'{YELLOW}Meter (0-1000):{END}', METER_MIN, METER_MAX) < 50:
                 print('Check main line for test pressure.')
                 match prompt_text(
                     f'{YELLOW}Pressure ({UNDERLINE}H{END}{YELLOW}igh/'
                     f'{UNDERLINE}N{END}{YELLOW}ormal/'
-                    f'{UNDERLINE}L{END}{YELLOW}ow): {END}',
+                    f'{UNDERLINE}L{END}{YELLOW}ow):{END}',
                     PRESSURE_INPUTS,
                 ):
                     case 'n' | 'normal':
@@ -68,7 +69,7 @@ def main(is_restarting=False):
                 match prompt_text(
                     f'{YELLOW}Velocity ({UNDERLINE}H{UNDERLINE}{YELLOW}igh/'
                     f'{UNDERLINE}N{END}{YELLOW}ormal/'
-                    f'{UNDERLINE}L{END}{YELLOW}ow): {END}',
+                    f'{UNDERLINE}L{END}{YELLOW}ow):{END}',
                     PRESSURE_INPUTS,
                 ):
                     case 'n' | 'normal':

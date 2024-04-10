@@ -12,7 +12,7 @@ from sorting import timed_sorting
 LENGTH = 10000
 
 END = '\033[0m'
-BOLD = '\033[1m'
+GREEN = '\033[32m'
 
 sorter = pysort.Sorting()
 
@@ -38,15 +38,9 @@ stats = {
 
 fastest_time = min(stats, key=stats.get)
 slowest_time = max(stats, key=stats.get)
+print('Fastest sorting:', f'{GREEN}{fastest_time} ({int(stats[fastest_time])} seconds){END}')
+print('Slowest sorting:', f'{GREEN}{slowest_time} ({int(stats[slowest_time])} seconds){END}')
 
 print()
-print(
-    f'The fastest is {BOLD}{fastest_time} {END}' +
-    f'running for {BOLD}{int(stats[fastest_time])}{END} seconds.',
-)
-print(
-    f'The slowest is {BOLD}{slowest_time} {END}' +
-    f'running for {BOLD}{int(stats[slowest_time])}{END} seconds.',
-)
 print('Goodbye!')
 print()

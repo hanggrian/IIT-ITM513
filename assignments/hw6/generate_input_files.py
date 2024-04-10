@@ -13,15 +13,15 @@ from faker.providers.phone_number import Provider
 
 class LdapProvider(Provider):
     """Standard US phone number format."""
-    formats = ("###-###-####",)
+    formats = ('###-###-####',)
 
 
 class PhonesProvider(Provider):
     """Multiple formats half of which are incorrect."""
     formats = (
-        "###-###-####", "(###) #######", "(###) ### ####", "##########",  # acceptable
-        "###-####-###", "(###) ###-####",  # invalid format
-        "(###) ########", "#########",  # not 10 digits
+        '###-###-####', '(###) #######', '(###) ### ####', '##########',  # acceptable
+        '###-####-###', '(###) ###-####',  # invalid format
+        '(###) ########', '#########',  # not 10 digits
     )
 
 
@@ -51,15 +51,16 @@ for _ in range(ENTRIES_PHONES):
     phones_text += f'{phones_faker.phone_number()}\n'
 
 print()
-print(f'Writing {INPUT_LDAP}...')
+print(f'Writing {INPUT_LDAP}.')
 
 with open(INPUT_LDAP, 'w', encoding='UTF-8') as f:
     f.write(ldap_text)
 
-print(f'Writing {INPUT_PHONES}...')
+print(f'Writing {INPUT_PHONES}.')
 
 with open(INPUT_PHONES, 'w', encoding='UTF-8') as f:
     f.write(phones_text)
 
+print()
 print('Goodbye!')
 print()

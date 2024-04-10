@@ -43,7 +43,7 @@ match (
     prompt_text(
         f'{YELLOW}Do you want to skip bubble_sort for faster result ' +
         f'({UNDERLINE}Y{END}{YELLOW}es/' +
-        f'{UNDERLINE}N{END}{YELLOW}o): {END}',
+        f'{UNDERLINE}N{END}{YELLOW}o):{END}',
         ['y', 'yes', 'n', 'no', 'q', 'quit'],
     )
 ):
@@ -56,12 +56,12 @@ match (
         shell_sort_stats = get_sorting_stats(shell_sort)
         quicksort_stats = get_sorting_stats(quicksort)
     case _:
+        print()
         print('Goodbye!')
         print()
         sys.exit(0)
 
-print('Finished!')
-print()
+print('Finished, displaying result.')
 
 ticks = list(range(10000, 100000, 10000))
 
@@ -74,3 +74,7 @@ axes4.set_visible(False)
 pyplot.suptitle('Sorting Statistics', fontweight='bold')
 pyplot.tight_layout()
 pyplot.show()
+
+print()
+print('Goodbye!')
+print()

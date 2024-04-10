@@ -8,7 +8,7 @@ Author: Hendra Wijaya (A20529195)
 from pandas import read_csv
 
 END = '\033[0m'
-BOLD = '\033[1m'
+GREEN = '\033[32m'
 
 
 def get_pronoun(person):
@@ -21,20 +21,17 @@ def get_pronoun(person):
 titanic = read_csv('titanic.csv')
 
 print()
-print(f'There were {BOLD}{titanic.shape[0]} passengers{END} on the Titanic.')
+print(f'There were {GREEN}{titanic.shape[0]} passengers{END} on the Titanic.')
 
 series_sex = titanic['sex']
 
-print(f"Number of Male Passengers: {BOLD}{titanic[series_sex == 'male'].shape[0]}{END}")
-print(f"Number of Female Passengers: {BOLD}{titanic[series_sex == 'female'].shape[0]}{END}")
+print('Number of Male Passengers:', f"{GREEN}{titanic[series_sex == 'male'].shape[0]}{END}")
+print('Number of Female Passengers:', f"{GREEN}{titanic[series_sex == 'female'].shape[0]}{END}")
 
 series_age = titanic['age']
 
-print(f"The average age of all the passengers was {BOLD}{series_age.mean():,.2f}{END}")
-print(
-    f"There are {BOLD}{titanic[series_age < 21].shape[0]} passengers {END}" +
-    'under 21 years old.',
-)
+print(f'The average age of all the passengers was {GREEN}{series_age.mean():,.2f}{END}')
+print(f'There are {GREEN}{titanic[series_age < 21].shape[0]} passengers {END} under 21 years old.')
 
 series_survived = titanic['survived']
 condition_survive = series_survived == 'yes'
@@ -43,31 +40,37 @@ condition_male = series_sex == 'male'
 condition_female = series_sex == 'female'
 
 print(
-    f'Total Passengers Survived: {BOLD}{titanic[condition_survive].shape[0]}{END}, ' +
-    f'Male: {BOLD}{titanic[condition_survive & condition_male].shape[0]}{END}, ' +
-    f'Female: {BOLD}{titanic[condition_survive & condition_female].shape[0]}{END}',
+    'Total Passengers Survived:',
+    f'{GREEN}{titanic[condition_survive].shape[0]}{END}, ',
+    'Male:',
+    f'{GREEN}{titanic[condition_survive & condition_male].shape[0]}{END}, ',
+    'Female:',
+    f'{GREEN}{titanic[condition_survive & condition_female].shape[0]}{END}',
 )
 print(
-    f'Total Passengers Deceased: {BOLD}{titanic[condition_deceased].shape[0]}{END}, ' +
-    f'Male: {BOLD}{titanic[condition_deceased & condition_male].shape[0]}{END}, ' +
-    f'Female: {BOLD}{titanic[condition_deceased & condition_female].shape[0]}{END}',
+    'Total Passengers Deceased:',
+    f'{GREEN}{titanic[condition_deceased].shape[0]}{END}, ',
+    'Male:',
+    f'{GREEN}{titanic[condition_deceased & condition_male].shape[0]}{END}, ',
+    'Female:',
+    f'{GREEN}{titanic[condition_deceased & condition_female].shape[0]}{END}',
 )
 
 survivor_youngest = titanic[condition_survive].sort_values(by='age').iloc[0]
 survivor_oldest = titanic[condition_survive].sort_values(by='age', ascending=False).iloc[0]
 
 print(
-    f"The youngest survivor was {BOLD}{survivor_youngest['Name']}. {END}" +
-    f"{get_pronoun(survivor_youngest)} was {BOLD}{survivor_youngest['age']:,.2f}{END} years old.",
+    f"The youngest survivor was {GREEN}{survivor_youngest['Name']}. {END}" +
+    f"{get_pronoun(survivor_youngest)} was {GREEN}{survivor_youngest['age']:,.2f}{END} years old.",
 )
 print(
-    f"The oldest survivor was {BOLD}{survivor_oldest['Name']}. {END}" +
-    f"{get_pronoun(survivor_oldest)} was {BOLD}{survivor_oldest['age']:,.2f}{END} years old.",
+    f"The oldest survivor was {GREEN}{survivor_oldest['Name']}. {END}" +
+    f"{get_pronoun(survivor_oldest)} was {GREEN}{survivor_oldest['age']:,.2f}{END} years old.",
 )
 
 print('List of Passengers:')
 for name in titanic['Name']:
-    print(f'{BOLD}{name}{END}')
+    print(f'{GREEN}{name}{END}')
 
 print()
 print('Goodbye!')

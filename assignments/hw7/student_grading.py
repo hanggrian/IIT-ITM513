@@ -11,24 +11,24 @@ from pandas import read_csv
 from scipy.stats import mode
 
 END = '\033[0m'
-BOLD = '\033[1m'
+GREEN = '\033[32m'
 
 array = read_csv('student_grades.csv').to_numpy()
 
 print()
 print('Display data')
-print(f'{BOLD}{array}{END}')
+print(f'{GREEN}{array}{END}')
 
 print()
-print(f'There are {BOLD}{array.shape[0]}{END} students')
+print(f'There are {GREEN}{array.shape[0]} students{END}')
 
 print()
 print('Display numbers of rows and columns')
-print(f'{BOLD}({array.shape[0]}, {array.shape[1]}){END}')
+print(f'{GREEN}({array.shape[0]}, {array.shape[1]}){END}')
 
 print()
-print('Display data type')
-print(f'{BOLD}{array.dtype}{END}')
+print(f'Display data type')
+print(f'{GREEN}{array.dtype}{END}')
 
 print()
 print('Descriptive Statistics ...')
@@ -36,15 +36,15 @@ print('Descriptive Statistics ...')
 # basis of statistics and pie chart
 overalls = array[:, 31]
 
-print(f'\tMin overall score: {BOLD}{min(overalls)}{END}')
-print(f'\tMax overall score: {BOLD}{max(overalls)}{END}')
-print(f'\tMean: {BOLD}{numpy.mean(overalls)}{END}')
-print(f'\tMedian: {BOLD}{numpy.median(overalls)}{END}')
-print(f'\tMode: {BOLD}{mode(overalls)[0]}{END}')
-print(f'\tStd. Dev.: {BOLD}{numpy.std(overalls)}{END}')
+print('\tMin overall score:', f'{GREEN}{min(overalls)}{END}')
+print('\tMax overall score:', f'{GREEN}{max(overalls)}{END}')
+print('\tMean:', f'{GREEN}{numpy.mean(overalls)}{END}')
+print('\tMedian:', f'{GREEN}{numpy.median(overalls)}{END}')
+print('\tMode:', f'{GREEN}{mode(overalls)[0]}{END}')
+print('\tStd. Dev.:', f'{GREEN}{numpy.std(overalls)}{END}')
 print(
     '\tPercentile (25%, 75%): ' +
-    f'{BOLD}[{numpy.percentile(overalls, 25)} {numpy.percentile(overalls, 75)}]{END}',
+    f'{GREEN}[{numpy.percentile(overalls, 25)} {numpy.percentile(overalls, 75)}]{END}',
 )
 
 # gradually receding 10 points on each level until F
@@ -58,11 +58,11 @@ grades = {
 
 print()
 print('Number of students achieved in each grade category:')
-print(f"{BOLD}{grades['A']}{END} A")
-print(f"{BOLD}{grades['B']}{END} B")
-print(f"{BOLD}{grades['C']}{END} C")
-print(f"{BOLD}{grades['D']}{END} D")
-print(f"{BOLD}{grades['F']}{END} F")
+print(f"{GREEN}{grades['A']}{END} A")
+print(f"{GREEN}{grades['B']}{END} B")
+print(f"{GREEN}{grades['C']}{END} C")
+print(f"{GREEN}{grades['D']}{END} D")
+print(f"{GREEN}{grades['F']}{END} F")
 
 # draw pie chart
 pyplot.title('Student Performance Pie Chart', fontweight='bold')

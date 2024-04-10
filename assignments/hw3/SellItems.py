@@ -13,16 +13,19 @@ from calculator import dollarize, get_sales_tax
 END = '\033[0m'
 BOLD = '\033[1m'
 UNDERLINE = '\033[4m'
+RED = '\033[31m'
+GREEN = '\033[32m'
 YELLOW = '\033[33m'
 
 prices = []
 
 print()
 print(
-    "This program will keep asking for item's price until user enters " +
-    f'{UNDERLINE}S{END}top/' +
-    f'{UNDERLINE}Q{END}uit',
+    f"{BOLD}This program will keep asking for item's price until user enters " +
+    f'{UNDERLINE}S{END}{BOLD}top/' +
+    f'{UNDERLINE}Q{END}{BOLD}uit{END}',
 )
+print()
 
 
 def main():
@@ -33,17 +36,19 @@ def main():
             return None
         case 'q' | 'quit':
             print()
+            print('Goodbye!')
+            print()
             sys.exit(0)
     if not result:
-        print('Cannot be empty, try again...')
+        print(f'{RED}Cannot be empty, try again...{END}')
         return main()
     try:
         result = float(result)
     except ValueError:
-        print('Parsing error, try again...')
+        print(f'{RED}Parsing error, try again...{END}')
         return main()
     if result < 0:
-        print('Invalid negative value, try again...')
+        print(f'{RED}Invalid negative value, try again...{END}')
         return main()
     prices.append(result)
     return main()
@@ -57,10 +62,12 @@ for p in prices:
     print(dollarize(p), end=' ')
     subtotal += p
 print()
-print(f'Subtotal: {BOLD}{dollarize(subtotal)}{END}')
+print('Subtotal:', f'{GREEN}{dollarize(subtotal)}{END}')
 
 sales_tax = get_sales_tax(subtotal)
-print(f'Sales tax: {BOLD}{dollarize(sales_tax)}{END}')
-print(f'Grand total: {BOLD}{dollarize(subtotal + sales_tax)}{END}')
+print('Sales tax:', f'{GREEN}{dollarize(sales_tax)}{END}')
+print('Grand total:', f'{GREEN}{dollarize(subtotal + sales_tax)}{END}')
 
+print()
+print('Goodbye!')
 print()

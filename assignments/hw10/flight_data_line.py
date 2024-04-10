@@ -11,8 +11,8 @@ from matplotlib import pyplot
 from pandas import read_csv
 from seaborn import lineplot
 
-BOLD = '\033[1m'
 END = '\033[0m'
+GREEN = '\033[32m'
 
 simplefilter(action='ignore', category=FutureWarning)
 
@@ -25,7 +25,7 @@ avg_passengers = (
 max_annual_passengers = avg_passengers.groupby('year')['passengers'].sum().reset_index()
 
 print()
-print(f"Total number of passengers per year are\n{BOLD}${max_annual_passengers}{END}")
+print(f'Total number of passengers per year are\n{GREEN}${max_annual_passengers}{END}')
 print()
 print('Goodbye!')
 print()

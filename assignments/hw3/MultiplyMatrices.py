@@ -10,6 +10,8 @@ from calculator import multiplyMatrix
 
 END = '\033[0m'
 BOLD = '\033[1m'
+RED = '\033[31m'
+GREEN = '\033[32m'
 YELLOW = '\033[33m'
 
 
@@ -19,12 +21,12 @@ def prompt_matrix(message):
     :param message: a space-separated decimals.
     :return: 2-D list.
     """
-    result = input(message).strip()
+    result = input(f'{message} ').strip()
     if not result:
-        return prompt_matrix('Cannot be empty, try again... ')
+        return prompt_matrix(f'{RED}Cannot be empty, try again...{END}')
     result = result.split(' ')
     if len(result) != 9:
-        return prompt_matrix('Incorrect size, try again... ')
+        return prompt_matrix(f'{RED}Incorrect size, try again...{END}')
     try:
         return [
             [float(result[0]), float(result[1]), float(result[2])],
@@ -32,7 +34,7 @@ def prompt_matrix(message):
             [float(result[6]), float(result[7]), float(result[8])],
         ]
     except ValueError:
-        return prompt_matrix('Parsing error, try again... ')
+        return prompt_matrix(f'{RED}Parsing error, try again...{END}')
 
 
 def get_longest_element_length(matrix):
@@ -54,10 +56,11 @@ def stringify_element(num, length):
 
 
 print()
-print('3x3 matrix is a space-separated value of 9 decimals')
+print(f'{BOLD}3x3 matrix is a space-separated value of 9 decimals{END}')
+print()
 
-matrix1 = prompt_matrix(f'{YELLOW}Enter matrix1: {END}')
-matrix2 = prompt_matrix(f'{YELLOW}Enter matrix2: {END}')
+matrix1 = prompt_matrix(f'{YELLOW}Enter matrix1:{END}')
+matrix2 = prompt_matrix(f'{YELLOW}Enter matrix2:{END}')
 matrix3 = multiplyMatrix(matrix1, matrix2)
 length1 = get_longest_element_length(matrix1)
 length2 = get_longest_element_length(matrix2)
@@ -71,7 +74,7 @@ print(
     f'{stringify_element(matrix2[0][0], length2)} ' +
     f'{stringify_element(matrix2[0][1], length2)} ' +
     f'{stringify_element(matrix2[0][2], length2)}     ' +
-    f'{BOLD}{stringify_element(matrix3[0][0], length3)} ' +
+    f'{GREEN}{stringify_element(matrix3[0][0], length3)} ' +
     f'{stringify_element(matrix3[0][1], length3)} ' +
     f'{stringify_element(matrix3[0][2], length3)}{END}',
 )
@@ -82,7 +85,7 @@ print(
     f'{stringify_element(matrix2[1][0], length2)} ' +
     f'{stringify_element(matrix2[1][1], length2)} ' +
     f'{stringify_element(matrix2[1][2], length2)}  =  ' +
-    f'{BOLD}{stringify_element(matrix3[1][0], length3)} ' +
+    f'{GREEN}{stringify_element(matrix3[1][0], length3)} ' +
     f'{stringify_element(matrix3[1][1], length3)} ' +
     f'{stringify_element(matrix3[1][2], length3)}{END}',
 )
@@ -93,8 +96,11 @@ print(
     f'{stringify_element(matrix2[2][0], length2)} ' +
     f'{stringify_element(matrix2[2][1], length2)} ' +
     f'{stringify_element(matrix2[2][2], length2)}     ' +
-    f'{BOLD}{stringify_element(matrix3[2][0], length3)} ' +
+    f'{GREEN}{stringify_element(matrix3[2][0], length3)} ' +
     f'{stringify_element(matrix3[2][1], length3)} ' +
     f'{stringify_element(matrix3[2][2], length3)}{END}',
 )
+
+print()
+print('Goodbye!')
 print()

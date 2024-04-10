@@ -9,7 +9,8 @@ from numpy.random import randint
 from pandas import Series, DataFrame
 
 END = '\033[0m'
-UNDERLINE = '\033[4m'
+BOLD = '\033[1m'
+GREEN = '\033[32m'
 
 ALPHABETS = 'abcdefghijklmno'
 
@@ -20,13 +21,13 @@ def print_line(question, answer):
     """Convenient method to answer line-by-line."""
     global alphabet_counter  # pylint: disable=invalid-name, global-statement
     print()
-    print(f'{UNDERLINE}{ALPHABETS[alphabet_counter]}. {question}{END}')
-    print(answer)
+    print(f'{ALPHABETS[alphabet_counter]}. {question}')
+    print(f'{GREEN}{answer}{END}')
     alphabet_counter = alphabet_counter + 1
 
 
 print()
-print('Demonstrating pandas series...')
+print(f'{BOLD}Demonstrating pandas series{END}')
 
 print_line('Create a Series from the list [7, 11, 13, 17].', Series([7, 11, 13, 17]))
 
@@ -55,7 +56,7 @@ print_line(
 )
 
 print()
-print('Demonstrating pandas dataframes...')
+print(f'{BOLD}Demonstrating pandas dataframes{END}')
 
 # generated randomly using the values in similar range of part (d)
 temperature_map = {
@@ -112,7 +113,7 @@ print_line(
 print_line('Transpose temperatures.', temperature_dataframe.transpose())
 
 print_line(
-    'Sort temperatures so that its column names are in alphabetical order',
+    'Sort temperatures so that its column names are in alphabetical order.',
     temperature_dataframe.sort_index(axis=1),
 )
 
