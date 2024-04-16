@@ -1,3 +1,4 @@
+# pylint: disable=invalid-name
 """
 Assignment #3
 List/array operations to calculate grand total with a sales tax and 2-D matrix multiplication.
@@ -7,26 +8,12 @@ Author: Hendra Wijaya (A20529195)
 
 from unittest import TestCase
 
-from calculator import dollarize, get_sales_tax, multiplyMatrix
+from MultiplyMatrices import multiplyMatrix
 
 
 # pylint: disable=missing-class-docstring, missing-function-docstring
-class TestCalculator(TestCase):
-    def test_get_sales_tax(self):
-        self.assertEqual(0, get_sales_tax(0))
-        self.assertEqual(7, int(get_sales_tax(100)))
-
-        # invalid parameter
-        self.assertRaises(Exception, get_sales_tax, 'foo')
-
-    def test_dollarize(self):
-        self.assertEqual('$0.00', dollarize(0))
-        self.assertEqual('$1.23', dollarize(1.23456789))
-
-        # invalid parameter
-        self.assertRaises(Exception, dollarize, 'foo')
-
-    def test_multiplyMatrix(self):  # pylint: disable=invalid-name
+class TestMultiplyMatrices(TestCase):
+    def test_multiplyMatrix(self):
         # sample data obtained from https://www.mathsisfun.com/algebra/matrix-multiplying.html
         # 2x2 multiply by 2x2
         matrix = multiplyMatrix([[4, 0], [1, -9]], [[8, 0], [2, -18]])

@@ -10,3 +10,10 @@ out/
 .venv/
 __pycache__/
 .ipynb_checkpoints/
+
+# Office
+~$*.docx*
+
+# draw.io
+*.drawio.bkp
+*.drawio.dtmp

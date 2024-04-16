@@ -8,4 +8,4 @@
 
 ## Diagram
 
-1. Class diagram<br><img src="https://github.com/hendraanggrian/IIT-ITM513/raw/assets/assignments/hw11/diagram1.png" width="640">
+1. Class diagram<br><img src="https://github.com/hendraanggrian/IIT-ITM513/raw/assets/assignments/hw11/diagram1.svg" width="640">

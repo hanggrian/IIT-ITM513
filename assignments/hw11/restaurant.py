@@ -13,8 +13,7 @@ from store import Store, STATUS_OPEN, STATUS_CLOSED
 class Restaurant(Store):
     """Subclass of store that serves foods and beverages."""
 
-    # pylint: disable=too-many-arguments
-    def __init__(
+    def __init__( # pylint: disable=too-many-arguments
         self,
         name: str,
         address: str,

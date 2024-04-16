@@ -7,11 +7,12 @@ Author: Hendra Wijaya (A20529195)
 
 from unittest import TestCase
 
-from sorting import generate_random_list, bubble_sort, shell_sort, quicksort
+from custom_sorting import bubble_sort, shell_sort, quicksort
+from sorting import generate_random_list
 
 
 # pylint: disable=missing-class-docstring, missing-function-docstring
-class TestSorting(TestCase):
+class TestCustomSorting(TestCase):
     def assertSorted(self, collection):  # pylint: disable=invalid-name
         """Makes sure that every sorting method is appropriate."""
         for i, value in enumerate(collection[:-1]):

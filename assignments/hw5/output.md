@@ -1,6 +1,6 @@
 # Program output
 
-## sorting_cli.py
+## custom_sorting.py
 
 1. Main interface<br><img src="https://github.com/hendraanggrian/IIT-ITM513/raw/assets/assignments/hw5/screenshot1_1.png" width="480">
 1. Safeguarding measures<br><img src="https://github.com/hendraanggrian/IIT-ITM513/raw/assets/assignments/hw5/screenshot1_2.png" width="480">
@@ -8,6 +8,6 @@
 
 <div style="page-break-after: always;"></div>
 
-## pysort_sample.py
+## pysort_sorting.py
 
 1. Main interface<br><img src="https://github.com/hendraanggrian/IIT-ITM513/raw/assets/assignments/hw5/screenshot2.png" width="480">
