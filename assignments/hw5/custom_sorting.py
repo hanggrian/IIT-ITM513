@@ -104,59 +104,57 @@ def get_sorting_stats(action):
     }
 
 
-def main():
-    """The main function."""
-
-    def apply_axes(axes, title, sort_stats):
-        """Configures axes properties before displaying it."""
-        axes.set_title(title)
-        if sort_stats is not None:
-            axes.plot(sort_stats.keys(), sort_stats.values())
-        axes.set_xlabel('Range')
-        axes.set_ylabel('Time (in seconds)')
-        axes.set_xticks(ticks)
-
-    print()
-    match (
-        prompt_text(
-            f'{YELLOW}Do you want to skip bubble_sort for faster result ' +
-            f'({UNDERLINE}Y{END}{YELLOW}es/' +
-            f'{UNDERLINE}N{END}{YELLOW}o):{END}',
-            ['y', 'yes', 'n', 'no', 'q', 'quit'],
-        )
-    ):
-        case 'y' | 'yes':
-            bubble_sort_stats: None = None
-            shell_sort_stats = get_sorting_stats(shell_sort)
-            quicksort_stats = get_sorting_stats(quicksort)
-        case 'n' | 'no':
-            bubble_sort_stats: dict[int, float] = get_sorting_stats(bubble_sort)
-            shell_sort_stats = get_sorting_stats(shell_sort)
-            quicksort_stats = get_sorting_stats(quicksort)
-        case _:
-            print()
-            print('Goodbye!')
-            print()
-            sys.exit(0)
-
-    print('Finished, displaying result.')
-
-    ticks = list(range(10000, 100000, 10000))
-
-    _, ((axes1, axes2), (axes3, axes4)) = pyplot.subplots(2, 2, figsize=(11, 9))
-    apply_axes(axes1, 'Bubble Sort Time', bubble_sort_stats)
-    apply_axes(axes2, 'Shell Sort Time', shell_sort_stats)
-    apply_axes(axes3, 'Quicksort Time', quicksort_stats)
-    axes4.set_visible(False)
-
-    pyplot.suptitle('Sorting Statistics', fontweight='bold')
-    pyplot.tight_layout()
-    pyplot.show()
-
-    print()
-    print('Goodbye!')
-    print()
+if __name__ != '__main__':
+    sys.exit(0)
 
 
-if __name__ == '__main__':
-    main()
+def apply_axes(axes, title, sort_stats):
+    """Configures axes properties before displaying it."""
+    axes.set_title(title)
+    if sort_stats is not None:
+        axes.plot(sort_stats.keys(), sort_stats.values())
+    axes.set_xlabel('Range')
+    axes.set_ylabel('Time (in seconds)')
+    axes.set_xticks(ticks)
+
+
+print()
+match (
+    prompt_text(
+        f'{YELLOW}Do you want to skip bubble_sort for faster result ' +
+        f'({UNDERLINE}Y{END}{YELLOW}es/' +
+        f'{UNDERLINE}N{END}{YELLOW}o):{END}',
+        ['y', 'yes', 'n', 'no', 'q', 'quit'],
+    )
+):
+    case 'y' | 'yes':
+        bubble_sort_stats: None = None
+        shell_sort_stats = get_sorting_stats(shell_sort)
+        quicksort_stats = get_sorting_stats(quicksort)
+    case 'n' | 'no':
+        bubble_sort_stats: dict[int, float] = get_sorting_stats(bubble_sort)
+        shell_sort_stats = get_sorting_stats(shell_sort)
+        quicksort_stats = get_sorting_stats(quicksort)
+    case _:
+        print()
+        print('Goodbye!')
+        print()
+        sys.exit(0)
+
+print('Finished, displaying result.')
+
+ticks = list(range(10000, 100000, 10000))
+
+_, ((axes1, axes2), (axes3, axes4)) = pyplot.subplots(2, 2, figsize=(11, 9))
+apply_axes(axes1, 'Bubble Sort Time', bubble_sort_stats)
+apply_axes(axes2, 'Shell Sort Time', shell_sort_stats)
+apply_axes(axes3, 'Quicksort Time', quicksort_stats)
+axes4.set_visible(False)
+
+pyplot.suptitle('Sorting Statistics', fontweight='bold')
+pyplot.tight_layout()
+pyplot.show()
+
+print()
+print('Goodbye!')
+print()

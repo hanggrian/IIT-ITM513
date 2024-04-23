@@ -23,7 +23,7 @@ class Restaurant(Store):
         sales_tax_pct: float = 9,  # https://en.wikipedia.org/wiki/Sales_taxes_in_the_United_States
     ):
         """
-        Main constructor.
+        The main constructor.
 
         :param name: store name, cannot be empty.
         :param address: location, cannot be empty.

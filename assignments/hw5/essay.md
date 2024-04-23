@@ -18,18 +18,18 @@ elements with an earlier letter, placing "John" after "Doe." The sorting
 algorithm can be applied to any data type provided that the comparator can
 determine their relative order.
 
-1. **Selection sort:** It represents the most basic sorting algorithm (or
-   arguably bubble sort), involving element swapping of gradually increasing
-   indices. While easy to implement, it is not recommended for large datasets
-   due to its inefficiency.
-2. **Merge sort:** A methodical sorting derived from the divide-and-conquer
-   approach that is stable, meaning indices of equal values are left untouched.
-   Merge sort is favorable for a guaranteed $O(n \log n)$ worst time
-   complexity (Programiz, n.d.).
-3. **Quicksort:** Another divide-and-conquer method that utilizes a pivot point,
-   it often outperforms merge sort but has the potential to be worse if the
-   chosen pivot is continuously unfavorable. Quicksort is the default
-   implementation of primitive array sorting in Java (Baeldung, 2024).
+1.  **Selection sort:** It represents the most basic sorting algorithm (or
+    arguably bubble sort), involving element swapping of gradually increasing
+    indices. While easy to implement, it is not recommended for large datasets
+    due to its inefficiency.
+1.  **Merge sort:** A methodical sorting derived from the divide-and-conquer
+    approach that is stable, meaning indices of equal values are left untouched.
+    Merge sort is favorable for a guaranteed $O(n \log n)$ worst time
+    complexity (Programiz, n.d.).
+1.  **Quicksort:** Another divide-and-conquer method that utilizes a pivot
+    point, it often outperforms merge sort but has the potential to be worse if
+    the chosen pivot is continuously unfavorable. Quicksort is the default
+    implementation of primitive array sorting in Java (Baeldung, 2024).
 
 ## Searching
 
@@ -38,12 +38,12 @@ the search predicate. One common application of search algorithms is finding the
 maximum value of numbers, which helps to get the highest price for retail
 products. Unlike sorting, search algorithms do not modify an item's position.
 
-1. **Linear search:** As the name suggests, it sequentially checks each element
-   until the target is found or the end of the collection is reached. It is
-   straightforward but proven time-consuming.
-2. **Binary search:** Separates the collection into two halves and discards the
-   one that doesn't contain the target, halving the workload on each step.
-   Binary search is only applicable to sorted collections.
+1.  **Linear search:** As the name suggests, it sequentially checks each element
+    until the target is found or the end of the collection is reached. It is
+    straightforward but proven time-consuming.
+1.  **Binary search:** Separates the collection into two halves and discards the
+    one that doesn't contain the target, halving the workload on each step.
+    Binary search is only applicable to sorted collections.
 
 ## References
 

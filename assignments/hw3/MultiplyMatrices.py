@@ -6,6 +6,8 @@ List/array operations to calculate grand total with a sales tax and 2-D matrix m
 Author: Hendra Wijaya (A20529195)
 """
 
+import sys
+
 END = '\033[0m'
 BOLD = '\033[1m'
 RED = '\033[31m'
@@ -70,58 +72,55 @@ def stringify_element(num, length):
     return s + spaces
 
 
-def main():
-    """The main function."""
-    print()
-    print(f'{BOLD}3x3 matrix is a space-separated value of 9 decimals{END}')
-    print()
+if __name__ != '__main__':
+    sys.exit(0)
 
-    matrix1 = prompt_matrix(f'{YELLOW}Enter matrix1:{END}')
-    matrix2 = prompt_matrix(f'{YELLOW}Enter matrix2:{END}')
-    matrix3 = multiplyMatrix(matrix1, matrix2)
-    length1 = get_longest_element_length(matrix1)
-    length2 = get_longest_element_length(matrix2)
-    length3 = get_longest_element_length(matrix3)
+print()
+print(f'{BOLD}3x3 matrix is a space-separated value of 9 decimals{END}')
+print()
 
-    print('The multiplication of the matrices is')
-    print(
-        f'{stringify_element(matrix1[0][0], length1)} ' +
-        f'{stringify_element(matrix1[0][1], length1)} ' +
-        f'{stringify_element(matrix1[0][2], length1)}     ' +
-        f'{stringify_element(matrix2[0][0], length2)} ' +
-        f'{stringify_element(matrix2[0][1], length2)} ' +
-        f'{stringify_element(matrix2[0][2], length2)}     ' +
-        f'{GREEN}{stringify_element(matrix3[0][0], length3)} ' +
-        f'{stringify_element(matrix3[0][1], length3)} ' +
-        f'{stringify_element(matrix3[0][2], length3)}{END}',
-    )
-    print(
-        f'{stringify_element(matrix1[1][0], length1)} ' +
-        f'{stringify_element(matrix1[1][1], length1)} ' +
-        f'{stringify_element(matrix1[1][2], length1)}  ×  ' +
-        f'{stringify_element(matrix2[1][0], length2)} ' +
-        f'{stringify_element(matrix2[1][1], length2)} ' +
-        f'{stringify_element(matrix2[1][2], length2)}  =  ' +
-        f'{GREEN}{stringify_element(matrix3[1][0], length3)} ' +
-        f'{stringify_element(matrix3[1][1], length3)} ' +
-        f'{stringify_element(matrix3[1][2], length3)}{END}',
-    )
-    print(
-        f'{stringify_element(matrix1[2][0], length1)} ' +
-        f'{stringify_element(matrix1[2][1], length1)} ' +
-        f'{stringify_element(matrix1[2][2], length1)}     ' +
-        f'{stringify_element(matrix2[2][0], length2)} ' +
-        f'{stringify_element(matrix2[2][1], length2)} ' +
-        f'{stringify_element(matrix2[2][2], length2)}     ' +
-        f'{GREEN}{stringify_element(matrix3[2][0], length3)} ' +
-        f'{stringify_element(matrix3[2][1], length3)} ' +
-        f'{stringify_element(matrix3[2][2], length3)}{END}',
-    )
+matrix1 = prompt_matrix(f'{YELLOW}Enter matrix1:{END}')
+matrix2 = prompt_matrix(f'{YELLOW}Enter matrix2:{END}')
+matrix3 = multiplyMatrix(matrix1, matrix2)
+length1 = get_longest_element_length(matrix1)
+length2 = get_longest_element_length(matrix2)
+length3 = get_longest_element_length(matrix3)
 
-    print()
-    print('Goodbye!')
-    print()
+print('The multiplication of the matrices is')
+print(
+    f'{stringify_element(matrix1[0][0], length1)} ' +
+    f'{stringify_element(matrix1[0][1], length1)} ' +
+    f'{stringify_element(matrix1[0][2], length1)}     ' +
+    f'{stringify_element(matrix2[0][0], length2)} ' +
+    f'{stringify_element(matrix2[0][1], length2)} ' +
+    f'{stringify_element(matrix2[0][2], length2)}     ' +
+    f'{GREEN}{stringify_element(matrix3[0][0], length3)} ' +
+    f'{stringify_element(matrix3[0][1], length3)} ' +
+    f'{stringify_element(matrix3[0][2], length3)}{END}',
+)
+print(
+    f'{stringify_element(matrix1[1][0], length1)} ' +
+    f'{stringify_element(matrix1[1][1], length1)} ' +
+    f'{stringify_element(matrix1[1][2], length1)}  ×  ' +
+    f'{stringify_element(matrix2[1][0], length2)} ' +
+    f'{stringify_element(matrix2[1][1], length2)} ' +
+    f'{stringify_element(matrix2[1][2], length2)}  =  ' +
+    f'{GREEN}{stringify_element(matrix3[1][0], length3)} ' +
+    f'{stringify_element(matrix3[1][1], length3)} ' +
+    f'{stringify_element(matrix3[1][2], length3)}{END}',
+)
+print(
+    f'{stringify_element(matrix1[2][0], length1)} ' +
+    f'{stringify_element(matrix1[2][1], length1)} ' +
+    f'{stringify_element(matrix1[2][2], length1)}     ' +
+    f'{stringify_element(matrix2[2][0], length2)} ' +
+    f'{stringify_element(matrix2[2][1], length2)} ' +
+    f'{stringify_element(matrix2[2][2], length2)}     ' +
+    f'{GREEN}{stringify_element(matrix3[2][0], length3)} ' +
+    f'{stringify_element(matrix3[2][1], length3)} ' +
+    f'{stringify_element(matrix3[2][2], length3)}{END}',
+)
 
-
-if __name__ == '__main__':
-    main()
+print()
+print('Goodbye!')
+print()

@@ -22,7 +22,7 @@ class Store(ABC):
         sales_tax_pct: float,
     ):
         """
-        Main constructor.
+        The main constructor.
 
         :param name: store name, cannot be empty.
         :param address: location, cannot be empty.

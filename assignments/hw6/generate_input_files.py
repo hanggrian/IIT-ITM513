@@ -5,6 +5,7 @@ Convert LDAP data structure and validate phone numbers using regular expression.
 Author: Hendra Wijaya (A20529195)
 """
 
+import sys
 from datetime import datetime, timezone, timedelta
 
 from faker import Faker
@@ -30,43 +31,40 @@ class PhonesProvider(Provider):
     )
 
 
-def main():
-    """The main function."""
-    ldap_faker = Faker(locale='en_US')
-    ldap_faker.add_provider(LdapProvider)
+if __name__ != '__main__':
+    sys.exit(0)
 
-    phones_faker = Faker(locale='en_US')
-    phones_faker.add_provider(PhonesProvider)
+ldap_faker = Faker(locale='en_US')
+ldap_faker.add_provider(LdapProvider)
 
-    formatted_time = datetime.now(timezone(timedelta(hours=7))).strftime('%b %d %I:%M%p')
+phones_faker = Faker(locale='en_US')
+phones_faker.add_provider(PhonesProvider)
 
-    ldap_text = f'# Generated at {formatted_time}\n'
-    for _ in range(ENTRIES_LDAP):
-        first_name = ldap_faker.first_name()
-        last_name = ldap_faker.last_name()
-        ldap_text += f'{first_name[0].lower()}{last_name.lower()}:'
-        ldap_text += f'{first_name}:{last_name}:'
-        ldap_text += f'{ldap_faker.phone_number()}\n'  # Linux recommends final newline
+formatted_time = datetime.now(timezone(timedelta(hours=7))).strftime('%b %d %I:%M%p')
 
-    phones_text = f'# Generated at {formatted_time}\n'
-    for _ in range(ENTRIES_PHONES):
-        phones_text += f'{phones_faker.phone_number()}\n'
+ldap_text = f'# Generated at {formatted_time}\n'
+for _ in range(ENTRIES_LDAP):
+    first_name = ldap_faker.first_name()
+    last_name = ldap_faker.last_name()
+    ldap_text += f'{first_name[0].lower()}{last_name.lower()}:'
+    ldap_text += f'{first_name}:{last_name}:'
+    ldap_text += f'{ldap_faker.phone_number()}\n'  # Linux recommends final newline
 
-    print()
-    print(f'Writing {INPUT_LDAP}.')
+phones_text = f'# Generated at {formatted_time}\n'
+for _ in range(ENTRIES_PHONES):
+    phones_text += f'{phones_faker.phone_number()}\n'
 
-    with open(INPUT_LDAP, 'w', encoding='UTF-8') as file:
-        file.write(ldap_text)
+print()
+print(f'Writing {INPUT_LDAP}.')
 
-    print(f'Writing {INPUT_PHONES}.')
+with open(INPUT_LDAP, 'w', encoding='UTF-8') as file:
+    file.write(ldap_text)
 
-    with open(INPUT_PHONES, 'w', encoding='UTF-8') as file:
-        file.write(phones_text)
+print(f'Writing {INPUT_PHONES}.')
 
-    print()
-    print('Goodbye!')
-    print()
+with open(INPUT_PHONES, 'w', encoding='UTF-8') as file:
+    file.write(phones_text)
 
-
-if __name__ == '__main__':
-    main()
+print()
+print('Goodbye!')
+print()

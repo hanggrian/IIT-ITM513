@@ -4,7 +4,7 @@ Recursion and single-window GUI application wrapped in a main method.
 
 Author: Hendra Wijaya (A20529195)
 """
-
+import sys
 from tkinter import Tk, Frame, Label, Entry, Button, GROOVE, E, N, S, W
 
 FONT_BODY = ('Noto Sans', 12)
@@ -31,7 +31,7 @@ class Coin:
 
     def __init__(self, coin_type, amount):
         """
-        Main constructor.
+        The main constructor.
 
         :param coin_type: currency type, one of the declared types.
         :param amount: cash value, cannot be negative.
@@ -130,115 +130,130 @@ def update_output(entry, label, value):
     label.config(text=f' {value:.2f} ', fg=color)
 
 
-def main():
-    """The main function."""
+if __name__ != '__main__':
+    sys.exit(0)
 
-    def add_input_line(label_text):
-        global input_count  # pylint: disable=invalid-name, global-statement
-        input_count += 1
 
-        Label(root, text=f'{label_text}:', font=FONT_BODY).grid(
-            row=input_count,
-            column=0,
-            padx=PADDING_SMALL,
-            pady=PADDING_SMALL,
-            sticky=E,
-        )
+def add_input_line(label_text):
+    """
+    Insert label and field control on the left side of the window.
 
-        entry = Entry(root, font=FONT_INPUT)
-        entry.bind('<Return>', calculate)
-        entry.grid(
-            row=input_count,
-            column=1,
-            padx=PADDING_SMALL,
-            pady=PADDING_SMALL,
-            sticky=N + S + W + E,
-        )
-        root.columnconfigure(1, weight=1)
-        return entry
+    :param label_text: label message.
+    """
+    global input_count  # pylint: disable=invalid-name, global-statement
+    input_count += 1
 
-    def add_output_line(label_text):
-        global output_count  # pylint: disable=invalid-name, global-statement
-        output_count += 1
-        if output_count < 5:
-            font1 = FONT_BODY
-            font2 = FONT_INPUT
-        else:
-            font1 = FONT_BODY_RAISED
-            font2 = FONT_INPUT_RAISED
-
-        Label(root, text=f'{label_text}: $', font=font1).grid(
-            row=output_count,
-            column=3,
-            padx=(PADDING_LARGE, PADDING_SMALL),
-            pady=PADDING_SMALL,
-            sticky=E,
-        )
-
-        label = Label(root, text=' 0.00 ', font=font2, relief=GROOVE, borderwidth=2, anchor=E)
-        label.grid(
-            row=output_count,
-            column=4,
-            padx=PADDING_SMALL,
-            pady=PADDING_SMALL,
-            sticky=N + S + W + E,
-        )
-        return label
-
-    def calculate(_=None):
-        quarter_in_dollar = Coin(Coin.QUARTER, parse_input(quarter_entry)).dollar_amount
-        dime_in_dollar = Coin(Coin.DIME, parse_input(dime_entry)).dollar_amount
-        nickel_in_dollar = Coin(Coin.NICKEL, parse_input(nickel_entry)).dollar_amount
-        penny_in_dollar = Coin(Coin.PENNY, parse_input(penny_entry)).dollar_amount
-        total_in_dollar = quarter_in_dollar + dime_in_dollar + nickel_in_dollar + penny_in_dollar
-
-        update_output(quarter_entry, quarter_label, quarter_in_dollar)
-        update_output(dime_entry, dime_label, dime_in_dollar)
-        update_output(nickel_entry, nickel_label, nickel_in_dollar)
-        update_output(penny_entry, penny_label, penny_in_dollar)
-        update_output(None, total_label, total_in_dollar)
-
-    window = Tk()
-    window.title('Change Counter')
-    window.minsize(480, False)
-    window.maxsize(1280, False)
-    window.resizable(True, False)
-    window.columnconfigure(0, weight=1)
-
-    root = Frame(window)
-    root.grid(padx=PADDING_LARGE, pady=PADDING_LARGE, sticky=N + S + E + W)
-
-    Label(root, text='Enter the number of each coin type and hit, Compute:', font=FONT_BODY).grid(
-        row=0,
+    Label(root, text=f'{label_text}:', font=FONT_BODY).grid(
+        row=input_count,
         column=0,
-        columnspan=4,
-        pady=(0, PADDING_LARGE),
-        sticky=W,
-    )
-
-    quarter_entry = add_input_line('Quarters')
-    dime_entry = add_input_line('Dimes')
-    nickel_entry = add_input_line('Nickels')
-    penny_entry = add_input_line('Pennies')
-
-    quarter_label = add_output_line('Quarter value')
-    dime_label = add_output_line('Dime value')
-    nickel_label = add_output_line('Nickel value')
-    penny_label = add_output_line('Penny value')
-    total_label = add_output_line('Total change value')
-
-    button = Button(root, text='Compute', font=FONT_BUTTON, command=calculate)
-    button.grid(
-        row=5,
-        column=0,
-        columnspan=2,
         padx=PADDING_SMALL,
         pady=PADDING_SMALL,
-        sticky=N + S + E + W,
+        sticky=E,
     )
 
-    window.mainloop()
+    entry = Entry(root, font=FONT_INPUT)
+    entry.bind('<Return>', calculate)
+    entry.grid(
+        row=input_count,
+        column=1,
+        padx=PADDING_SMALL,
+        pady=PADDING_SMALL,
+        sticky=N + S + W + E,
+    )
+    root.columnconfigure(1, weight=1)
+    return entry
 
 
-if __name__ == "__main__":
-    main()
+def add_output_line(label_text):
+    """
+    Read input fields, calculate amount and update output controls.
+
+    :param label_text: label message.
+    """
+    global output_count  # pylint: disable=invalid-name, global-statement
+    output_count += 1
+    if output_count < 5:
+        font1 = FONT_BODY
+        font2 = FONT_INPUT
+    else:
+        font1 = FONT_BODY_RAISED
+        font2 = FONT_INPUT_RAISED
+
+    Label(root, text=f'{label_text}: $', font=font1).grid(
+        row=output_count,
+        column=3,
+        padx=(PADDING_LARGE, PADDING_SMALL),
+        pady=PADDING_SMALL,
+        sticky=E,
+    )
+
+    label = Label(root, text=' 0.00 ', font=font2, relief=GROOVE, borderwidth=2, anchor=E)
+    label.grid(
+        row=output_count,
+        column=4,
+        padx=PADDING_SMALL,
+        pady=PADDING_SMALL,
+        sticky=N + S + W + E,
+    )
+    return label
+
+
+def calculate(_=None):
+    """
+    Read input fields, calculate the output based on input fields.
+
+    :param _: Null object here is required as `bind` parameter.
+    """
+    quarter_in_dollar = Coin(Coin.QUARTER, parse_input(quarter_entry)).dollar_amount
+    dime_in_dollar = Coin(Coin.DIME, parse_input(dime_entry)).dollar_amount
+    nickel_in_dollar = Coin(Coin.NICKEL, parse_input(nickel_entry)).dollar_amount
+    penny_in_dollar = Coin(Coin.PENNY, parse_input(penny_entry)).dollar_amount
+    total_in_dollar = quarter_in_dollar + dime_in_dollar + nickel_in_dollar + penny_in_dollar
+
+    update_output(quarter_entry, quarter_label, quarter_in_dollar)
+    update_output(dime_entry, dime_label, dime_in_dollar)
+    update_output(nickel_entry, nickel_label, nickel_in_dollar)
+    update_output(penny_entry, penny_label, penny_in_dollar)
+    update_output(None, total_label, total_in_dollar)
+
+
+window = Tk()
+window.title('Change Counter')
+window.minsize(480, False)
+window.maxsize(1280, False)
+window.resizable(True, False)
+window.columnconfigure(0, weight=1)
+
+root = Frame(window)
+root.grid(padx=PADDING_LARGE, pady=PADDING_LARGE, sticky=N + S + E + W)
+
+Label(root, text='Enter the number of each coin type and hit, Compute:', font=FONT_BODY).grid(
+    row=0,
+    column=0,
+    columnspan=4,
+    pady=(0, PADDING_LARGE),
+    sticky=W,
+)
+
+quarter_entry = add_input_line('Quarters')
+dime_entry = add_input_line('Dimes')
+nickel_entry = add_input_line('Nickels')
+penny_entry = add_input_line('Pennies')
+
+quarter_label = add_output_line('Quarter value')
+dime_label = add_output_line('Dime value')
+nickel_label = add_output_line('Nickel value')
+penny_label = add_output_line('Penny value')
+total_label = add_output_line('Total change value')
+
+button = Button(root, text='Compute', font=FONT_BUTTON, command=calculate)
+button.grid(
+    row=5,
+    column=0,
+    columnspan=2,
+    padx=PADDING_SMALL,
+    pady=PADDING_SMALL,
+    sticky=N + S + E + W,
+)
+
+window.mainloop()

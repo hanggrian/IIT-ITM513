@@ -25,7 +25,7 @@ class GroceryStore(Store):
         store_type: str = TYPE_INDEPENDENT,
     ):
         """
-        Main constructor.
+        The main constructor.
 
         :param name: store name, cannot be empty.
         :param address: location, cannot be empty.

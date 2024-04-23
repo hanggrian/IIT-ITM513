@@ -5,7 +5,7 @@ Analyze times spent with sorting methods and display the statistics simultaneous
 Author: Hendra Wijaya (A20529195)
 """
 
-from sorting_techniques import pysort
+from sorting_techniques.pysort import Sorting
 
 from sorting import timed_sorting
 
@@ -14,7 +14,7 @@ LENGTH = 10000
 END = '\033[0m'
 GREEN = '\033[32m'
 
-sorter = pysort.Sorting()
+sorter = Sorting()
 
 # skip bogo & stooage for being insanely slow
 print()

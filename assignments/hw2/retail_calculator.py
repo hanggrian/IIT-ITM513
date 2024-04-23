@@ -17,7 +17,7 @@ YELLOW = '\033[33m'
 
 
 def main(is_restarting=False):
-    """Main recursive function."""
+    """The main recursive function."""
     if is_restarting:
         print('Restarting...')
     print()
