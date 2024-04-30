@@ -35,7 +35,8 @@ def main(is_restarting=False):
     print()
     print('Check status light.')
     match prompt_text(
-        f'{YELLOW}Color ({UNDERLINE}G{END}{YELLOW}reen/' +
+        f'{YELLOW}Color ('
+        f'{UNDERLINE}G{END}{YELLOW}reen/' +
         f'{UNDERLINE}A{END}{YELLOW}mber/' +
         f'{UNDERLINE}R{END}{YELLOW}ed):{END}',
         COLOR_INPUTS,
@@ -51,7 +52,8 @@ def main(is_restarting=False):
             if prompt_digit(f'{YELLOW}Meter (0-1000):{END}', METER_MIN, METER_MAX) < 50:
                 print('Check main line for test pressure.')
                 match prompt_text(
-                    f'{YELLOW}Pressure ({UNDERLINE}H{END}{YELLOW}igh/'
+                    f'{YELLOW}Pressure ('
+                    f'{UNDERLINE}H{END}{YELLOW}igh/'
                     f'{UNDERLINE}N{END}{YELLOW}ormal/'
                     f'{UNDERLINE}L{END}{YELLOW}ow):{END}',
                     PRESSURE_INPUTS,
@@ -67,7 +69,8 @@ def main(is_restarting=False):
             else:
                 print('Measure flow velocity at inlet 2-B.')
                 match prompt_text(
-                    f'{YELLOW}Velocity ({UNDERLINE}H{UNDERLINE}{YELLOW}igh/'
+                    f'{YELLOW}Velocity ('
+                    f'{UNDERLINE}H{UNDERLINE}{YELLOW}igh/'
                     f'{UNDERLINE}N{END}{YELLOW}ormal/'
                     f'{UNDERLINE}L{END}{YELLOW}ow):{END}',
                     PRESSURE_INPUTS,

@@ -121,8 +121,8 @@ def apply_axes(axes, title, sort_stats):
 print()
 match (
     prompt_text(
-        f'{YELLOW}Do you want to skip bubble_sort for faster result ' +
-        f'({UNDERLINE}Y{END}{YELLOW}es/' +
+        f'{YELLOW}Do you want to skip bubble_sort for faster result (' +
+        f'{UNDERLINE}Y{END}{YELLOW}es/' +
         f'{UNDERLINE}N{END}{YELLOW}o):{END}',
         ['y', 'yes', 'n', 'no', 'q', 'quit'],
     )

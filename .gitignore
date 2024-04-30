@@ -2,14 +2,13 @@
 .DS_Store
 ._*
 
-# IDEA
+# PyCharm
 *.iml
 .idea/
-out/
-
-# Python
 .venv/
 __pycache__/
+
+# Jupyter
 .ipynb_checkpoints/
 
 # Office

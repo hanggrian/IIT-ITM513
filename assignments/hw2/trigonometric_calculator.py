@@ -16,7 +16,8 @@ YELLOW = '\033[33m'
 print()
 
 match prompt_text(
-    f'{YELLOW}Which angle do you want to convert ({UNDERLINE}D{END}{YELLOW}egrees/' +
+    f'{YELLOW}Which angle do you want to convert ('
+    f'{UNDERLINE}D{END}{YELLOW}egrees/' +
     f'{UNDERLINE}R{END}{YELLOW}adians):{END}',
     ['d', 'degrees', 'r', 'radians', 'q', 'quit'],
 ):

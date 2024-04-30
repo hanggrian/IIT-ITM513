@@ -47,6 +47,7 @@ products. Unlike sorting, search algorithms do not modify an item's position.
 
 ## References
 
+::: no-indent
 <ul style="list-style-type: none; padding: 0; line-height: 2.0;">
   <li style="text-indent: -4em; margin-left: 4em;">
     Programiz. (n.d.). <i>Sorting algorithms</i>. Retrieved from Programiz:
@@ -58,3 +59,4 @@ products. Unlike sorting, search algorithms do not modify an item's position.
     https://www.baeldung.com/arrays-sortobject-vs-sortint/
   </li>
 </ul>
+:::

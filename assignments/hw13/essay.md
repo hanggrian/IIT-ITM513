@@ -65,6 +65,7 @@ for uncertain scenarios in a complex environment.
 
 ## References
 
+::: no-indent
 <ul style="list-style-type: none; padding: 0; line-height: 2.0;">
   <li style="text-indent: -4em; margin-left: 4em;">
     Google. (n.d.). <i>What is Supervised Learning?</i>. Retrieved from Google
@@ -79,3 +80,4 @@ for uncertain scenarios in a complex environment.
     Amazon Web Services: https://aws.amazon.com/what-is/reinforcement-learning/
   </li>
 </ul>
+:::

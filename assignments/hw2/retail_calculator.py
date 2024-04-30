@@ -24,7 +24,8 @@ def main(is_restarting=False):
     retail = get_retail(prompt_decimal(f"{YELLOW}Enter the item's wholesale cost:{END}", 0))
     print('Retail price:', f'{GREEN}{dollarize(retail)}{END}')
     match prompt_text(
-        f'{YELLOW}Do you have another item ({UNDERLINE}Y{END}{YELLOW}es/' +
+        f'{YELLOW}Do you have another item ('
+        f'{UNDERLINE}Y{END}{YELLOW}es/' +
         f'{UNDERLINE}N{END}{YELLOW}o)?{END}',
         ['y', 'yes', 'n', 'no', 'q', 'quit'],
     ):

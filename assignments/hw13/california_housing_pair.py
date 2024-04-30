@@ -11,7 +11,8 @@ from seaborn import pairplot
 from sklearn.datasets import fetch_california_housing
 
 housing = fetch_california_housing()
-df = DataFrame(housing.data, columns=housing.feature_names)  # pylint: disable=no-member
 
-pairplot(df)
+pairplot(DataFrame(housing.data, columns=housing.feature_names))  # pylint: disable=no-member
+pyplot.gcf().set_size_inches(20, 10)
+pyplot.tight_layout()
 pyplot.show()
