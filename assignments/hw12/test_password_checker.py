@@ -5,13 +5,13 @@ Recursion and single-window GUI application wrapped in a main method.
 Author: Hendra Wijaya (A20529195)
 """
 
-from unittest import TestCase
+import unittest
 
 from password_checker import does_password_pass_check
 
 
 # pylint: disable=missing-class-docstring, missing-function-docstring
-class TestPasswordChecker(TestCase):
+class TestPasswordChecker(unittest.TestCase):
     def test_password_checker(self):
         self.assertTrue(does_password_pass_check('1234'))
         self.assertTrue(does_password_pass_check('ABC123'))
@@ -21,3 +21,7 @@ class TestPasswordChecker(TestCase):
         self.assertFalse(does_password_pass_check(''))
         self.assertFalse(does_password_pass_check('password'))
         self.assertFalse(does_password_pass_check('!@#$%^&*'))
+
+
+if __name__ == '__main__':
+    unittest.main()

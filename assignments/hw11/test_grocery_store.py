@@ -5,14 +5,14 @@ Represent restaurant and grocery store as objects with shared attributes.
 Author: Hendra Wijaya (A20529195)
 """
 
-from unittest import TestCase
+import unittest
 
 from grocery_store import GroceryStore, TYPE_INDEPENDENT
 from store import STATUS_OPEN
 
 
 # pylint: disable=missing-class-docstring, missing-function-docstring
-class TestRestaurant(TestCase):
+class TestRestaurant(unittest.TestCase):
     def test_constructors(self):
         GroceryStore('Mega Lo Mart', 'Arlen, TX')  # default args
         GroceryStore('Mega Lo Mart', 'Arlen, TX', STATUS_OPEN, 5, TYPE_INDEPENDENT)  # all args
@@ -33,3 +33,7 @@ class TestRestaurant(TestCase):
         self.assertEqual(100, restaurant.sell_item(100, 1))
         self.assertEqual(100, restaurant.calculate_total_sales())
         self.assertEqual(4, int(restaurant.calculate_total_sales_tax()))
+
+
+if __name__ == '__main__':
+    unittest.main()

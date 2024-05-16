@@ -6,13 +6,13 @@ List/array operations to calculate grand total with a sales tax and 2-D matrix m
 Author: Hendra Wijaya (A20529195)
 """
 
-from unittest import TestCase
+import unittest
 
 from MultiplyMatrices import multiplyMatrix
 
 
 # pylint: disable=missing-class-docstring, missing-function-docstring
-class TestMultiplyMatrices(TestCase):
+class TestMultiplyMatrices(unittest.TestCase):
     def test_multiplyMatrix(self):
         # sample data obtained from https://www.mathsisfun.com/algebra/matrix-multiplying.html
         # 2x2 multiply by 2x2
@@ -30,3 +30,7 @@ class TestMultiplyMatrices(TestCase):
 
         # invalid parameter
         self.assertRaises(ValueError, multiplyMatrix, [[1]], [[1], [1]])
+
+
+if __name__ == '__main__':
+    unittest.main()

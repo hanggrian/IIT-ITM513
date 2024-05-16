@@ -5,14 +5,14 @@ Analyze times spent with sorting methods and display the statistics simultaneous
 Author: Hendra Wijaya (A20529195)
 """
 
-from unittest import TestCase
+import unittest
 
 from custom_sorting import bubble_sort, shell_sort, quicksort
 from sorting import generate_random_list
 
 
 # pylint: disable=missing-class-docstring, missing-function-docstring
-class TestCustomSorting(TestCase):
+class TestCustomSorting(unittest.TestCase):
     def assertSorted(self, collection):  # pylint: disable=invalid-name
         """Makes sure that every sorting method is appropriate."""
         for i, value in enumerate(collection[:-1]):
@@ -37,3 +37,7 @@ class TestCustomSorting(TestCase):
         collection = generate_random_list(1000)
         quicksort(collection)
         self.assertSorted(collection)
+
+
+if __name__ == '__main__':
+    unittest.main()

@@ -5,7 +5,6 @@ Command-line application of polygon area calculator and diesel engine troublesho
 Author: Hendra Wijaya (A20529195)
 """
 
-import sys
 from math import tan, pi
 
 from prompts import prompt_decimal, prompt_digit
@@ -27,19 +26,17 @@ def get_polygon_area(sides, length):
     return (sides * length ** 2) / (4 * tan(pi / sides))
 
 
-if __name__ != '__main__':
-    sys.exit(0)
+if __name__ == '__main__':
+    print()
 
-print()
+    # prompt input
+    side_count = prompt_digit(f'{YELLOW}Enter the number of sides (3-100):{END}', 3, 100)
+    side_length = prompt_decimal(f'{YELLOW}Enter the side (0.1-1000):{END}', 0.1, 1000.0)
 
-# prompt input
-side_count = prompt_digit(f'{YELLOW}Enter the number of sides (3-100):{END}', 3, 100)
-side_length = prompt_decimal(f'{YELLOW}Enter the side (0.1-1000):{END}', 0.1, 1000.0)
+    # display result
+    area = get_polygon_area(side_count, side_length)
+    print(f'The area of the polygon is {GREEN}{area:.4f}{END}')
 
-# display result
-area = get_polygon_area(side_count, side_length)
-print(f'The area of the polygon is {GREEN}{area:.4f}{END}')
-
-print()
-print('Goodbye!')
-print()
+    print()
+    print('Goodbye!')
+    print()

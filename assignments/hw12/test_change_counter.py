@@ -5,13 +5,13 @@ Recursion and single-window GUI application wrapped in a main method.
 Author: Hendra Wijaya (A20529195)
 """
 
-from unittest import TestCase
+import unittest
 
 from change_counter import Coin
 
 
 # pylint: disable=missing-class-docstring, missing-function-docstring
-class TestChangeCounter(TestCase):
+class TestChangeCounter(unittest.TestCase):
     def test_coin(self):
         self.assertEqual(100, Coin(Coin.DOLLAR, 100).dollar_amount)
         self.assertEqual(25, Coin(Coin.QUARTER, 100).dollar_amount)
@@ -22,3 +22,7 @@ class TestChangeCounter(TestCase):
         # invalid parameters
         self.assertRaises(ValueError, Coin, Coin.NICKEL, -1)
         self.assertRaises(ValueError, Coin, 'half-dollar', 0)
+
+
+if __name__ == '__main__':
+    unittest.main()

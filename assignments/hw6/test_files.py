@@ -5,8 +5,8 @@ Convert LDAP data structure and validate phone numbers using regular expression.
 Author: Hendra Wijaya (A20529195)
 """
 
+import unittest
 from re import match
-from unittest import TestCase
 
 from generate_input_files import INPUT_LDAP, INPUT_PHONES
 from ldap import OUTPUT_LDAP
@@ -14,7 +14,7 @@ from phones import OUTPUT_PHONES
 
 
 # pylint: disable=missing-class-docstring, missing-function-docstring
-class TestFiles(TestCase):
+class TestFiles(unittest.TestCase):
     def test_ldap(self):
         with open(INPUT_LDAP, 'r', encoding='UTF-8') as file:
             for i, line in enumerate(file.read().splitlines()):
@@ -48,3 +48,7 @@ class TestFiles(TestCase):
 
         with open(OUTPUT_PHONES, 'r', encoding='UTF-8') as file:
             self.assertEqual(2, len(file.read().split('\n\n')))
+
+
+if __name__ == '__main__':
+    unittest.main()

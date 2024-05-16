@@ -5,14 +5,14 @@ Utilize functions declared in a separate file to calculate degrees, radius and r
 Author: Hendra Wijaya (A20529195)
 """
 
+import unittest
 from math import pi, degrees, radians
-from unittest import TestCase
 
 from calculator import d2r, dollarize, get_retail, r2d
 
 
 # pylint: disable=missing-class-docstring, missing-function-docstring
-class TestCalculator(TestCase):
+class TestCalculator(unittest.TestCase):
     def test_r2d(self):
         self.assertEqual(0, r2d(0))
         self.assertEqual(57, int(r2d(1)))
@@ -52,3 +52,7 @@ class TestCalculator(TestCase):
 
         # invalid parameter
         self.assertRaises(Exception, dollarize, 'foo')
+
+
+if __name__ == '__main__':
+    unittest.main()
