@@ -6,7 +6,8 @@ Author: Hendra Wijaya (A20529195)
 """
 
 import sys
-from typing import Any, Callable
+from collections.abc import Callable
+from typing import Any
 
 
 def read_txt(

@@ -10,7 +10,6 @@ import unittest
 from reader import read_txt
 
 
-# pylint: disable=missing-class-docstring, missing-function-docstring
 class TestReader(unittest.TestCase):
     def test_read_file(self):
         self.assertEqual(7, len(read_txt('employee_count_by_department.txt', ',')))

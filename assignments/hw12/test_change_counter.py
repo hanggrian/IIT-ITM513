@@ -10,7 +10,6 @@ import unittest
 from change_counter import Coin
 
 
-# pylint: disable=missing-class-docstring, missing-function-docstring
 class TestChangeCounter(unittest.TestCase):
     def test_coin(self):
         self.assertEqual(100, Coin(Coin.DOLLAR, 100).dollar_amount)

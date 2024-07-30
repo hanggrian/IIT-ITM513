@@ -11,7 +11,6 @@ from grocery_store import GroceryStore, TYPE_INDEPENDENT
 from store import STATUS_OPEN
 
 
-# pylint: disable=missing-class-docstring, missing-function-docstring
 class TestRestaurant(unittest.TestCase):
     def test_constructors(self):
         GroceryStore('Mega Lo Mart', 'Arlen, TX')  # default args

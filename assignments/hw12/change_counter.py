@@ -89,8 +89,7 @@ class Coin:
                 return self._amount * 0.05
             case Coin.PENNY:
                 return self._amount * 0.01
-            case _:
-                return self._amount
+        return self._amount
 
 
 def parse_input(entry):
@@ -119,7 +118,6 @@ def update_output(entry, label, value):
     :param entry: input field.
     :param label: output display.
     :param value: cash amount in dollar.
-    :return:
     """
     if entry is None or not entry.get():
         color = '#000'
@@ -137,7 +135,7 @@ if __name__ == '__main__':
 
         :param label_text: label message.
         """
-        global input_count  # pylint: disable=invalid-name, global-statement
+        global input_count  # pylint: disable=global-statement
         input_count += 1
 
         Label(root, text=f'{label_text}:', font=FONT_BODY).grid(
@@ -167,7 +165,7 @@ if __name__ == '__main__':
 
         :param label_text: label message.
         """
-        global output_count  # pylint: disable=invalid-name, global-statement
+        global output_count  # pylint: disable=global-statement
         output_count += 1
         if output_count < 5:
             font1 = FONT_BODY
@@ -197,9 +195,8 @@ if __name__ == '__main__':
 
     def calculate(_=None):
         """
-        Read input fields, calculate the output based on input fields.
-
-        :param _: Null object here is required as `bind` parameter.
+        Read input fields, calculate the output based on input fields. Null object here is required
+        as `bind` parameter.
         """
         quarter_in_dollar = Coin(Coin.QUARTER, parse_input(quarter_entry)).dollar_amount
         dime_in_dollar = Coin(Coin.DIME, parse_input(dime_entry)).dollar_amount

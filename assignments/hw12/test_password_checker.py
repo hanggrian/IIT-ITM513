@@ -10,7 +10,6 @@ import unittest
 from password_checker import does_password_pass_check
 
 
-# pylint: disable=missing-class-docstring, missing-function-docstring
 class TestPasswordChecker(unittest.TestCase):
     def test_password_checker(self):
         self.assertTrue(does_password_pass_check('1234'))

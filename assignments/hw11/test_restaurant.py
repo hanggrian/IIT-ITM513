@@ -11,7 +11,6 @@ from restaurant import Restaurant
 from store import STATUS_OPEN
 
 
-# pylint: disable=missing-class-docstring, missing-function-docstring
 class TestRestaurant(unittest.TestCase):
     def test_constructors(self):
         Restaurant('Casa Bonita', 'Lakewood, CO', 10, 2)  # default args

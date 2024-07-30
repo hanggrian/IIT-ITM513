@@ -5,9 +5,9 @@ Analyze times spent with sorting methods and display the statistics simultaneous
 Author: Hendra Wijaya (A20529195)
 """
 
+from collections.abc import Callable
 from random import randint
 from time import time
-from typing import Callable
 
 
 def generate_random_list(length: int) -> list[int]:

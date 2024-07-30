@@ -23,7 +23,7 @@ connection = connect('books.db')
 
 def print_header(header):
     """Convenient method to print question headline."""
-    global alphabet_counter  # pylint: disable=invalid-name, global-statement
+    global alphabet_counter  # pylint: disable=global-statement
     print()
     print(f'{ALPHABETS[alphabet_counter]}. {header}')
     alphabet_counter = alphabet_counter + 1

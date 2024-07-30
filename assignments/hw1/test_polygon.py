@@ -10,7 +10,6 @@ import unittest
 from polygon import get_polygon_area
 
 
-# pylint: disable=missing-class-docstring, missing-function-docstring
 class TestPolygon(unittest.TestCase):
     def test_get_polygon_area(self):
         self.assertEqual(72, int(get_polygon_area(5, 6.5)))

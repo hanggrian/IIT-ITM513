@@ -11,7 +11,6 @@ import unittest
 from SellItems import get_sales_tax
 
 
-# pylint: disable=missing-class-docstring, missing-function-docstring
 class TestSellItems(unittest.TestCase):
     def test_get_sales_tax(self):
         self.assertEqual(0, get_sales_tax(0))

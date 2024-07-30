@@ -1,0 +1,16 @@
+pylint
+rulebook-pylint
+regex
+pytest
+
+docstring_inheritance
+
+numpy
+matplotlib
+price_parser
+pysort
+faker
+pandas
+scipy
+seaborn
+scikit-learn

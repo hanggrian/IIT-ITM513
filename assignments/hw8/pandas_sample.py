@@ -5,6 +5,8 @@ Pandas library operations and data analysis of Titanic table.
 Author: Hendra Wijaya (A20529195)
 """
 
+from typing import NamedTuple
+
 from numpy.random import randint
 from pandas import Series, DataFrame
 
@@ -19,7 +21,7 @@ alphabet_counter: int = 0
 
 def print_section(question, answer):
     """Convenient method to answer sub-question."""
-    global alphabet_counter  # pylint: disable=invalid-name, global-statement
+    global alphabet_counter  # pylint: disable=global-statement
 
     print()
     print(f'{ALPHABETS[alphabet_counter]}. {question}')
@@ -60,11 +62,18 @@ print_section(
 print()
 print(f'{BOLD}Demonstrating pandas dataframes{END}')
 
+
+class Temperatures(NamedTuple):
+    low: float
+    mid: float
+    high: float
+
+
 # generated randomly using the values in similar range of part (d)
 temperature_map = {
-    'Maxine': [98.2, 99.8, 102],
-    'James': [100.2, 99.0, 97.3],
-    'Amanda': [95.6, 94.3, 93.1],
+    'Maxine': Temperatures(98.2, 99.8, 102),
+    'James': Temperatures(100.2, 99.0, 97.3),
+    'Amanda': Temperatures(95.6, 94.3, 93.1),
 }
 
 print_section(

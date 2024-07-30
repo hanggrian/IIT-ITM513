@@ -27,7 +27,7 @@ print('Display numbers of rows and columns')
 print(f'{GREEN}({array.shape[0]}, {array.shape[1]}){END}')
 
 print()
-print(f'Display data type')
+print('Display data type')
 print(f'{GREEN}{array.dtype}{END}')
 
 print()
@@ -49,10 +49,10 @@ print(
 
 # gradually receding 10 points on each level until F
 grades = {
-    'A': sum((90 <= overalls) & (overalls <= 100)),
-    'B': sum((80 <= overalls) & (overalls < 90)),
-    'C': sum((70 <= overalls) & (overalls < 80)),
-    'D': sum((60 <= overalls) & (overalls < 70)),
+    'A': sum((overalls >= 90) & (overalls <= 100)),
+    'B': sum((overalls >= 80) & (overalls < 90)),
+    'C': sum((overalls >= 70) & (overalls < 80)),
+    'D': sum((overalls >= 60) & (overalls < 70)),
     'F': sum(overalls < 60),
 }
 

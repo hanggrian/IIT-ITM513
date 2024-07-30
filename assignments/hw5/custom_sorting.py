@@ -27,9 +27,10 @@ def bubble_sort(collection):
     for i in range(length):
         swapped = False
         for j in range(0, length - i - 1):
-            if collection[j] > collection[j + 1]:
-                collection[j], collection[j + 1] = collection[j + 1], collection[j]
-                swapped = True
+            if collection[j] <= collection[j + 1]:
+                continue
+            collection[j], collection[j + 1] = collection[j + 1], collection[j]
+            swapped = True
         if not swapped:
             break
 
@@ -64,9 +65,10 @@ def _partition(collection, start, end):
     pivot = collection[end]
     i = start - 1
     for j in range(start, end):
-        if collection[j] <= pivot:
-            i += 1
-            collection[i], collection[j] = collection[j], collection[i]
+        if collection[j] > pivot:
+            continue
+        i += 1
+        collection[i], collection[j] = collection[j], collection[i]
     collection[i + 1], collection[end] = collection[end], collection[i + 1]
     return i + 1
 
@@ -78,10 +80,11 @@ def _quicksort(collection, start, end):
     :param start: low index.
     :param end: high index (exclusive).
     """
-    if start < end:
-        pivot = _partition(collection, start, end)
-        _quicksort(collection, start, pivot - 1)
-        _quicksort(collection, pivot + 1, end)
+    if start >= end:
+        return
+    pivot = _partition(collection, start, end)
+    _quicksort(collection, start, pivot - 1)
+    _quicksort(collection, pivot + 1, end)
 
 
 def quicksort(collection) -> None:

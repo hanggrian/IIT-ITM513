@@ -13,7 +13,6 @@ from ldap import OUTPUT_LDAP
 from phones import OUTPUT_PHONES
 
 
-# pylint: disable=missing-class-docstring, missing-function-docstring
 class TestFiles(unittest.TestCase):
     def test_ldap(self):
         with open(INPUT_LDAP, 'r', encoding='UTF-8') as file:

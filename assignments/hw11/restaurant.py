@@ -13,7 +13,7 @@ from store import Store, STATUS_OPEN, STATUS_CLOSED
 class Restaurant(Store):
     """Subclass of store that serves foods and beverages."""
 
-    def __init__( # pylint: disable=too-many-arguments
+    def __init__(
         self,
         name: str,
         address: str,
@@ -107,8 +107,7 @@ class Restaurant(Store):
         """
         if patrons <= 0:
             raise ValueError('Patrons must be positive.')
-        if patrons > self._current_occupancy:
-            patrons = self._current_occupancy
+        patrons = min(patrons, self._current_occupancy)
         self._total_served += patrons
         return patrons
 
@@ -121,8 +120,7 @@ class Restaurant(Store):
         """
         if patrons <= 0:
             raise ValueError('Patrons must be positive.')
-        if patrons > self._current_occupancy:
-            patrons = self._current_occupancy
+        patrons = min(patrons, self._current_occupancy)
         self._current_occupancy -= patrons
         return self._current_occupancy
 

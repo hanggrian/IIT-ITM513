@@ -11,7 +11,6 @@ import unittest
 from MultiplyMatrices import multiplyMatrix
 
 
-# pylint: disable=missing-class-docstring, missing-function-docstring
 class TestMultiplyMatrices(unittest.TestCase):
     def test_multiplyMatrix(self):
         # sample data obtained from https://www.mathsisfun.com/algebra/matrix-multiplying.html

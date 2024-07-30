@@ -11,7 +11,6 @@ from custom_sorting import bubble_sort, shell_sort, quicksort
 from sorting import generate_random_list
 
 
-# pylint: disable=missing-class-docstring, missing-function-docstring
 class TestCustomSorting(unittest.TestCase):
     def assertSorted(self, collection):  # pylint: disable=invalid-name
         """Makes sure that every sorting method is appropriate."""

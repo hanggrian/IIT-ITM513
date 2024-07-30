@@ -11,7 +11,6 @@ from math import pi, degrees, radians
 from calculator import d2r, dollarize, get_retail, r2d
 
 
-# pylint: disable=missing-class-docstring, missing-function-docstring
 class TestCalculator(unittest.TestCase):
     def test_r2d(self):
         self.assertEqual(0, r2d(0))

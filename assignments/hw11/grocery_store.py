@@ -16,7 +16,7 @@ TYPE_CHAIN = 'chain'
 class GroceryStore(Store):
     """Subclass of store that sells various kinds of item."""
 
-    def __init__(  # pylint: disable=too-many-arguments
+    def __init__(
         self,
         name: str,
         address: str,

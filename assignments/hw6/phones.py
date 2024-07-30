@@ -31,9 +31,9 @@ if __name__ == '__main__':
                 converted_line = f'({digits[:3]}) {digits[3:6]} {digits[6:]}'
                 print(f'{GREEN}{line} → {converted_line}{END}')
                 output_correct += converted_line + '\n'
-            else:
-                print(f'{RED}{line}{END}')
-                output_incorrect += line + '\n'
+                continue
+            print(f'{RED}{line}{END}')
+            output_incorrect += line + '\n'
 
     print()
     print(f"{BOLD}Writing '{OUTPUT_PHONES}'{END}")
